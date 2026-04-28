@@ -1,115 +1,469 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Launchpad — Deployed on Render</title>
+  <title>DryEaz 香港抽濕機專門店 | Dehumidifier Specialists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <span>🚚 全線產品免費送貨上門 · Free Delivery on All Orders</span>
+    <span class="topbar-phone">📞 +852 2121 0968</span>
+  </div>
+
+  <!-- Nav -->
   <nav>
     <div class="nav-inner">
-      <span class="logo">⚡ Launchpad</span>
-      <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="btn-nav">Get Started</a></li>
+      <a href="#" class="logo">Dry<span>Eaz</span></a>
+      <ul class="nav-links">
+        <li><a href="#products">移動式抽濕機</a></li>
+        <li><a href="#ceiling">天花抽濕機</a></li>
+        <li><a href="#industrial">工業抽濕機</a></li>
+        <li><a href="#features">功能特點</a></li>
+        <li><a href="#contact" class="nav-cta">聯絡我們</a></li>
       </ul>
+      <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
     </div>
+    <ul class="mobile-nav" id="mobileNav">
+      <li><a href="#products" onclick="toggleNav()">移動式抽濕機</a></li>
+      <li><a href="#ceiling" onclick="toggleNav()">天花抽濕機</a></li>
+      <li><a href="#industrial" onclick="toggleNav()">工業抽濕機</a></li>
+      <li><a href="#features" onclick="toggleNav()">功能特點</a></li>
+      <li><a href="#contact" onclick="toggleNav()">聯絡我們</a></li>
+    </ul>
   </nav>
 
-  <header class="hero">
-    <div class="hero-content">
-      <div class="badge">Deployed on Render</div>
-      <h1>Build and ship<br /><span class="gradient-text">faster than ever.</span></h1>
-      <p>Launchpad is a modern platform that helps teams go from idea to production in minutes — not months.</p>
-      <div class="hero-actions">
-        <a href="#features" class="btn-primary">Explore Features</a>
-        <a href="#about" class="btn-ghost">Learn More</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-tag">香港抽濕機專門店</p>
+        <h1>全屋抽濕<br /><span class="red">一部機搞掂</span></h1>
+        <p class="hero-sub">享受乾爽舒適生活。智能控制、WiFi遙控、自動排水，維持理想濕度，即日免費香港送貨。</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary">立即選購</a>
+          <a href="#ceiling" class="btn-outline">天花抽濕機</a>
+        </div>
+        <div class="hero-badges">
+          <div class="badge-item"><span class="badge-num">20</span><span class="badge-label">年行業經驗</span></div>
+          <div class="badge-item"><span class="badge-num">即日</span><span class="badge-label">免費送貨</span></div>
+          <div class="badge-item"><span class="badge-num">1年</span><span class="badge-label">保修保證</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-product-card">
+          <div class="product-img-placeholder ceiling-img">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="200" fill="#f5f5f5"/>
+              <rect x="30" y="60" width="140" height="80" rx="8" fill="#e0e0e0"/>
+              <rect x="50" y="80" width="100" height="40" rx="4" fill="#d0d0d0"/>
+              <rect x="85" y="150" width="30" height="15" rx="2" fill="#e0e0e0"/>
+              <circle cx="100" cy="100" r="12" fill="#bdbdbd"/>
+              <rect x="40" y="70" width="8" height="8" rx="2" fill="#aaa"/>
+              <rect x="152" y="70" width="8" height="8" rx="2" fill="#aaa"/>
+            </svg>
+          </div>
+          <div class="hero-card-info">
+            <span class="hero-card-tag">最受歡迎</span>
+            <p class="hero-card-name">天花抽濕機系列</p>
+            <p class="hero-card-range">20 – 550 升/日</p>
+          </div>
+        </div>
+        <div class="hero-floating-tag">WiFi App 控制</div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="card-glow">
-        <div class="terminal">
-          <div class="terminal-bar"><span></span><span></span><span></span></div>
-          <div class="terminal-body">
-            <p><span class="prompt">$</span> git push origin main</p>
-            <p class="dim">Deploying to Render...</p>
-            <p class="success">✓ Build complete</p>
-            <p class="success">✓ Deploy live in 12s</p>
-            <p><span class="prompt">$</span> <span class="cursor">|</span></p>
+
+    <div class="category-bar">
+      <a href="#products" class="cat-item">
+        <div class="cat-icon">💧</div>
+        <span>移動式抽濕機</span>
+        <small>65–138 升/日</small>
+      </a>
+      <a href="#ceiling" class="cat-item">
+        <div class="cat-icon">🏠</div>
+        <span>天花抽濕機</span>
+        <small>20–550 升/日</small>
+      </a>
+      <a href="#industrial" class="cat-item">
+        <div class="cat-icon">🏭</div>
+        <span>工業抽濕機</span>
+        <small>138–550 升/日</small>
+      </a>
+      <a href="#products" class="cat-item">
+        <div class="cat-icon">🎒</div>
+        <span>手提式抽濕機</span>
+        <small>輕巧移動</small>
+      </a>
+    </div>
+  </section>
+
+  <!-- Products: Mobile -->
+  <section id="products" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>移動式抽濕機</h2>
+        <p>靈活移動，適用於500–3000呎空間</p>
+        <a href="#contact" class="btn-link">查看更多型號 →</a>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-badge sale">熱賣</div>
+          <div class="product-img">
+            <div class="img-placeholder">
+              <svg viewBox="0 0 160 180" fill="none"><rect width="160" height="180" fill="#f8f8f8"/><rect x="20" y="20" width="120" height="130" rx="8" fill="#e8e8e8"/><rect x="35" y="40" width="90" height="70" rx="4" fill="#d5d5d5"/><rect x="55" y="155" width="50" height="12" rx="3" fill="#e0e0e0"/><circle cx="80" cy="75" r="20" fill="#c8c8c8"/></svg>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-vendor">DBA</p>
+            <p class="product-name">65升/日 移動抽濕機 DBA-DH65</p>
+            <p class="product-price">HK$5,500</p>
+            <a href="#contact" class="btn-cart">立即選購</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badge new">新品</div>
+          <div class="product-img">
+            <div class="img-placeholder">
+              <svg viewBox="0 0 160 180" fill="none"><rect width="160" height="180" fill="#f8f8f8"/><rect x="20" y="20" width="120" height="130" rx="8" fill="#e8e8e8"/><rect x="35" y="40" width="90" height="70" rx="4" fill="#d5d5d5"/><rect x="55" y="155" width="50" height="12" rx="3" fill="#e0e0e0"/><circle cx="80" cy="75" r="20" fill="#c8c8c8"/></svg>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-vendor">DryEaz</p>
+            <p class="product-name">65升/日 手提式抽濕機 DE-X65</p>
+            <p class="product-price">HK$7,880</p>
+            <a href="#contact" class="btn-cart">立即選購</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <div class="img-placeholder">
+              <svg viewBox="0 0 160 180" fill="none"><rect width="160" height="180" fill="#f8f8f8"/><rect x="20" y="20" width="120" height="130" rx="8" fill="#e8e8e8"/><rect x="35" y="40" width="90" height="70" rx="4" fill="#d5d5d5"/><rect x="55" y="155" width="50" height="12" rx="3" fill="#e0e0e0"/><circle cx="80" cy="75" r="20" fill="#c8c8c8"/></svg>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-vendor">DryEaz</p>
+            <p class="product-name">150升/日 移動型抽濕機 DE-C150</p>
+            <p class="product-price">HK$12,800</p>
+            <a href="#contact" class="btn-cart">立即選購</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <div class="img-placeholder">
+              <svg viewBox="0 0 160 180" fill="none"><rect width="160" height="180" fill="#f8f8f8"/><rect x="20" y="20" width="120" height="130" rx="8" fill="#e8e8e8"/><rect x="35" y="40" width="90" height="70" rx="4" fill="#d5d5d5"/><rect x="55" y="155" width="50" height="12" rx="3" fill="#e0e0e0"/><circle cx="80" cy="75" r="20" fill="#c8c8c8"/></svg>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-vendor">DBA</p>
+            <p class="product-name">75升/日 LGR移動型抽濕機 DBA-GEM75LD</p>
+            <p class="product-price">HK$9,800</p>
+            <a href="#contact" class="btn-cart">立即選購</a>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <section id="features" class="features">
+  <!-- Ceiling Section -->
+  <section id="ceiling" class="section section-alt">
     <div class="section-inner">
-      <h2>Everything you need to ship</h2>
-      <p class="section-sub">From static sites to full-stack apps — all in one place.</p>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">🚀</div>
-          <h3>Instant Deploys</h3>
-          <p>Push to GitHub and your site updates automatically within seconds. Zero config required.</p>
+      <div class="section-header">
+        <h2>天花抽濕機</h2>
+        <p>隱藏式安裝，全屋抽濕，節省空間</p>
+      </div>
+      <div class="ceiling-layout">
+        <div class="ceiling-features">
+          <div class="cf-item">
+            <div class="cf-icon">📐</div>
+            <div>
+              <h3>節省空間</h3>
+              <p>隱藏式安裝在天花板上，不佔用寶貴的居住空間</p>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-icon">💧</div>
+            <div>
+              <h3>無需倒水</h3>
+              <p>內置排水泵自動將水排走，內置防漏水位感應器，安全可靠</p>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-icon">🔇</div>
+            <div>
+              <h3>運作寧靜</h3>
+              <p>臥式壓縮機和變頻風扇電機，噪音量遠低於傳統家用抽濕機</p>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-icon">🏡</div>
+            <div>
+              <h3>一部機，多個房間</h3>
+              <p>通過管道式安裝，把乾燥空氣派送到每一個房間</p>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-icon">📱</div>
+            <div>
+              <h3>WiFi App 智能控制</h3>
+              <p>手機WiFi App隨時監控室內濕度，支援RS485整合到BMS</p>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-icon">⚡</div>
+            <div>
+              <h3>節能高效</h3>
+              <p>只需冷氣機1/4耗電量，根據設定濕度自動啟停</p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">🌐</div>
-          <h3>Global CDN</h3>
-          <p>Your assets are served from edge nodes worldwide for blazing-fast load times everywhere.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔒</div>
-          <h3>Free TLS</h3>
-          <p>Every service gets automatic HTTPS with a free SSL certificate — no setup needed.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📦</div>
-          <h3>Any Stack</h3>
-          <p>Node, Python, Go, Ruby, Rust, Docker — Render runs whatever you build with.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📊</div>
-          <h3>Built-in Metrics</h3>
-          <p>Monitor requests, bandwidth, and CPU without installing a single plugin.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💸</div>
-          <h3>Free Tier</h3>
-          <p>Start for free. Static sites are always free. Scale up only when you need to.</p>
+        <div class="ceiling-products">
+          <div class="product-card">
+            <div class="product-img">
+              <div class="img-placeholder ceiling-ph">
+                <svg viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#f0f0f0"/><rect x="10" y="20" width="140" height="60" rx="6" fill="#e0e0e0"/><rect x="25" y="35" width="110" height="30" rx="3" fill="#d0d0d0"/><rect x="70" y="85" width="20" height="20" rx="2" fill="#e0e0e0"/></svg>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-vendor">DBA</p>
+              <p class="product-name">20升/日 天花抽濕機 DBA-UTC20 (超薄版)</p>
+              <a href="#contact" class="btn-cart">查詢價格</a>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">
+              <div class="img-placeholder ceiling-ph">
+                <svg viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#f0f0f0"/><rect x="10" y="20" width="140" height="60" rx="6" fill="#e0e0e0"/><rect x="25" y="35" width="110" height="30" rx="3" fill="#d0d0d0"/><rect x="70" y="85" width="20" height="20" rx="2" fill="#e0e0e0"/></svg>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-vendor">DBA</p>
+              <p class="product-name">68升/日 天花抽濕機 DBA-UTC68 (超薄版)</p>
+              <a href="#contact" class="btn-cart">查詢價格</a>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">
+              <div class="img-placeholder ceiling-ph">
+                <svg viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#f0f0f0"/><rect x="10" y="20" width="140" height="60" rx="6" fill="#e0e0e0"/><rect x="25" y="35" width="110" height="30" rx="3" fill="#d0d0d0"/><rect x="70" y="85" width="20" height="20" rx="2" fill="#e0e0e0"/></svg>
+              </div>
+            </div>
+            <div class="product-info">
+              <p class="product-vendor">DBA</p>
+              <p class="product-name">120升/日 天花抽濕機 DBA-UTC120 (超薄版)</p>
+              <a href="#contact" class="btn-cart">查詢價格</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <div class="section-inner about-grid">
-      <div class="about-text">
-        <h2>Why Render?</h2>
-        <p>Render was built for developers who want the simplicity of Heroku with the power of AWS — without the ops overhead.</p>
-        <p>Connect your repo, define your service, and Render handles the rest: building, deploying, scaling, and monitoring your app around the clock.</p>
-        <a href="https://render.com" target="_blank" class="btn-primary">Visit Render.com</a>
+  <!-- Industrial -->
+  <section id="industrial" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>工業抽濕機 / 專業設備</h2>
+        <p>適用於倉庫、製造廠、實驗室等大型空間</p>
       </div>
-      <div class="about-stats">
-        <div class="stat"><span class="stat-num">12s</span><span class="stat-label">avg deploy time</span></div>
-        <div class="stat"><span class="stat-num">99.9%</span><span class="stat-label">uptime SLA</span></div>
-        <div class="stat"><span class="stat-num">150+</span><span class="stat-label">edge locations</span></div>
-        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">free static sites</span></div>
+      <div class="industrial-grid">
+        <div class="industrial-card">
+          <div class="ind-icon">🏭</div>
+          <h3>大型工業抽濕機</h3>
+          <p>高效耐用，能在苛刻工業環境中長時間運行，280–550升/日</p>
+          <ul>
+            <li>DBA-GE280LD-HP(LT) — 280升/日</li>
+            <li>DBA-GE400LD-HP(LT) — 400升/日</li>
+            <li>DBA-GE550LD-HP(LT) — 550升/日</li>
+          </ul>
+          <a href="#contact" class="btn-outline-dark">查詢報價</a>
+        </div>
+        <div class="industrial-card">
+          <div class="ind-icon">⚖️</div>
+          <h3>恆濕機（抽濕+加濕）</h3>
+          <p>同時具備抽濕和加濕功能，濕度控制更精準穩定</p>
+          <ul>
+            <li>適用：畫廊、酒窖、博物館</li>
+            <li>適用：實驗室、數據中心</li>
+            <li>精密濕度控制 ±2%RH</li>
+          </ul>
+          <a href="#contact" class="btn-outline-dark">查詢報價</a>
+        </div>
+        <div class="industrial-card">
+          <div class="ind-icon">🔄</div>
+          <h3>轉輪抽濕機（低溫適用）</h3>
+          <p>矽膠蜂窩狀抽濕輪，低溫環境中保持高效抽濕能力</p>
+          <ul>
+            <li>適用：實驗室、冷庫</li>
+            <li>適用：製藥廠、食品廠</li>
+            <li>低溫 -20°C 仍高效運作</li>
+          </ul>
+          <a href="#contact" class="btn-outline-dark">查詢報價</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="cta">
-    <h2>Ready to launch?</h2>
-    <p>Connect your GitHub repo and deploy in under a minute.</p>
-    <a href="https://render.com" target="_blank" class="btn-primary btn-large">Deploy Free on Render →</a>
+  <!-- Why DryEaz -->
+  <section id="features" class="section why-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>為什麼選擇 DryEaz？</h2>
+        <p>香港亞熱帶氣候，濕度高達80–90%，抽濕機是必備家電</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card accent">
+          <div class="why-num">20年</div>
+          <h3>行業經驗</h3>
+          <p>憑著多年經驗，為客戶提供最合適的抽濕方案及技術支援</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">即日</div>
+          <h3>免費送貨</h3>
+          <p>所有產品均現貨發售，長期保持充足貨源，最快即日送貨</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">1年</div>
+          <h3>保修保證</h3>
+          <p>全線產品提供一年保修，信心保證，售後服務有保障</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">1/4</div>
+          <h3>超低耗電量</h3>
+          <p>相較冷氣機，天花抽濕機只需1/4耗電量即可維持全屋乾爽</p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Size Guide -->
+  <section class="section section-alt size-guide">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>按面積選型</h2>
+        <p>不確定需要哪款型號？根據您的空間面積選擇合適的抽濕機</p>
+      </div>
+      <div class="size-table">
+        <div class="size-row header">
+          <span>空間面積</span>
+          <span>推薦類型</span>
+          <span>推薦型號</span>
+        </div>
+        <div class="size-row">
+          <span>500–1000 呎</span>
+          <span>座地式 / 移動式</span>
+          <span>DBA-DH65 / DE-X65</span>
+        </div>
+        <div class="size-row">
+          <span>1000–1500 呎</span>
+          <span>移動式 / 天花式</span>
+          <span>DE-C150 / DBA-UTC68</span>
+        </div>
+        <div class="size-row">
+          <span>1500–3000 呎</span>
+          <span>天花抽濕機</span>
+          <span>DBA-UTC120 / DBA-GEC68LD</span>
+        </div>
+        <div class="size-row">
+          <span>3000 呎以上</span>
+          <span>工業 / 商用</span>
+          <span>DBA-GE280LD / DBA-GE400LD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
+    <div class="section-inner contact-inner">
+      <div class="contact-text">
+        <h2>聯絡我們</h2>
+        <p>我們的專業團隊將為您推薦最合適的抽濕方案</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <p class="contact-label">銷售熱線</p>
+              <a href="tel:+85221210968" class="contact-value">+852 2121 0968</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📦</span>
+            <div>
+              <p class="contact-label">送貨服務</p>
+              <p class="contact-value">全香港免費送貨，最快即日</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🔧</span>
+            <div>
+              <p class="contact-label">售後服務</p>
+              <p class="contact-value">一年保修，專業維修團隊</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form">
+        <input type="text" placeholder="您的姓名 Name" required />
+        <input type="tel" placeholder="聯絡電話 Phone" required />
+        <input type="email" placeholder="電郵 Email" />
+        <select>
+          <option value="">選擇產品類型 Product Type</option>
+          <option>移動式抽濕機</option>
+          <option>天花抽濕機</option>
+          <option>工業抽濕機</option>
+          <option>手提式抽濕機</option>
+          <option>恆濕機</option>
+          <option>其他查詢</option>
+        </select>
+        <textarea placeholder="您的查詢 Enquiry" rows="4"></textarea>
+        <button type="submit" class="btn-primary btn-full">發送查詢 Send Enquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <span class="logo">⚡ Launchpad</span>
-      <span class="dim">Built with Claude Code · Deployed on Render</span>
+      <div class="footer-col">
+        <a href="#" class="logo footer-logo">Dry<span>Eaz</span></a>
+        <p>香港抽濕機專門店<br />Dehumidifier Specialists HK</p>
+        <p class="footer-phone">📞 +852 2121 0968</p>
+      </div>
+      <div class="footer-col">
+        <h4>產品系列</h4>
+        <ul>
+          <li><a href="#products">移動式抽濕機</a></li>
+          <li><a href="#ceiling">天花抽濕機</a></li>
+          <li><a href="#industrial">工業抽濕機</a></li>
+          <li><a href="#products">手提式抽濕機</a></li>
+          <li><a href="#industrial">恆濕機</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>服務</h4>
+        <ul>
+          <li><a href="#contact">免費送貨</a></li>
+          <li><a href="#contact">全屋抽濕方案訂製</a></li>
+          <li><a href="#contact">商業採購優惠</a></li>
+          <li><a href="#features">按面積選型</a></li>
+          <li><a href="#contact">售後保修</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>關於我們</h4>
+        <ul>
+          <li><a href="#features">關於 DryEaz</a></li>
+          <li><a href="#contact">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 DryEaz. All rights reserved. | 香港抽濕機推介推薦專門店</p>
     </div>
   </footer>
 
