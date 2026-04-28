@@ -31,8 +31,9 @@ body { font-family: var(--font); color: var(--text); background: var(--bg); font
 /* NAV */
 nav { position: sticky; top: 0; z-index: 200; background: #fff; border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.logo { font-size: 1.5rem; font-weight: 800; color: var(--black); text-decoration: none; letter-spacing: -.02em; white-space: nowrap; }
-.logo span { color: var(--red); }
+.logo { display: inline-flex; align-items: center; text-decoration: none; }
+.logo img { height: 30px; width: auto; display: block; }
+.footer-logo img { height: 36px; filter: invert(1) brightness(2); margin-bottom: 12px; }
 
 .nav-links { list-style: none; display: flex; align-items: center; gap: 2px; }
 .nav-links > li { position: relative; }
@@ -180,7 +181,7 @@ a.ci-val:hover { color: var(--red); }
 footer { background: var(--black); }
 .footer-inner { max-width: var(--max-w); margin: 0 auto; padding: 56px 32px 36px; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
 .fc > p { font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.8; margin-bottom: 8px; }
-.footer-logo { font-size: 1.5rem; display: block; margin-bottom: 10px; }
+.footer-logo { display: inline-block; margin-bottom: 10px; }
 .footer-phone { display: block; color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 8px; }
 .fc h4 { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
 .fc ul { list-style: none; }
