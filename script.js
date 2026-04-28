@@ -1,45 +1,47 @@
-// Mobile nav toggle
+// Mobile nav
 function toggleNav() {
   document.getElementById('mobileNav').classList.toggle('open');
 }
 
-// Active nav on scroll
-const navLinks = document.querySelectorAll('.nav-links a');
+// Scroll-based active nav
 const sections = document.querySelectorAll('section[id]');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === `#${entry.target.id}` ? 'var(--red)' : '';
-      });
-    }
+const navAs = document.querySelectorAll('.nav-links a');
+new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting)
+      navAs.forEach(a => a.style.color = a.getAttribute('href') === `#${e.target.id}` ? 'var(--red)' : '');
   });
-}, { rootMargin: '-40% 0px -55% 0px' });
-sections.forEach(s => observer.observe(s));
+}, { rootMargin: '-40% 0px -55% 0px' }).observe || sections.forEach(s =>
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting)
+        navAs.forEach(a => a.style.color = a.getAttribute('href') === `#${e.target.id}` ? 'var(--red)' : '');
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' }).observe(s)
+);
 
-// Contact form intercept
-document.querySelector('.contact-form')?.addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type=submit]');
-  btn.textContent = '已發送！感謝您的查詢 ✓';
-  btn.style.background = '#232323';
-  btn.disabled = true;
-});
-
-// Fade-in on scroll
-const fadeEls = document.querySelectorAll('.product-card, .industrial-card, .why-card, .cf-item, .size-row:not(.header)');
-const fadeObs = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      fadeObs.unobserve(entry.target);
+// AOS (scroll fade-in)
+const aosEls = document.querySelectorAll('[data-aos]');
+const aosObs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      aosObs.unobserve(e.target);
     }
   });
 }, { threshold: 0.08 });
-fadeEls.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(16px)';
-  el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-  fadeObs.observe(el);
+aosEls.forEach(el => aosObs.observe(el));
+
+// Sticky nav shadow
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,.08)' : '';
+});
+
+// Contact form
+document.getElementById('contactForm')?.addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  btn.textContent = '已發送！我們將盡快聯絡您 ✓';
+  btn.style.background = '#232323';
+  btn.disabled = true;
 });

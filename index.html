@@ -3,468 +3,695 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DryEaz 香港抽濕機專門店 | Dehumidifier Specialists</title>
+  <title>DryEaz 香港抽濕機專門店 | Dehumidifier Specialists HK</title>
+  <meta name="description" content="高效節能的DryEaz抽濕機，智能控制、WiFi遙控、自動排水功能，助你輕鬆維持理想濕度。網上購買抽濕機可享即日免費香港送貨服務。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Top Bar -->
   <div class="topbar">
-    <span>🚚 全線產品免費送貨上門 · Free Delivery on All Orders</span>
-    <span class="topbar-phone">📞 +852 2121 0968</span>
+    <span>🚚 全線產品免費送貨上門 Free Delivery · 一年保修 1-Year Warranty</span>
+    <a href="tel:+85221210968" class="topbar-phone">📞 +852 2121 0968</a>
   </div>
 
-  <!-- Nav -->
-  <nav>
+  <nav id="nav">
     <div class="nav-inner">
       <a href="#" class="logo">Dry<span>Eaz</span></a>
       <ul class="nav-links">
-        <li><a href="#products">移動式抽濕機</a></li>
-        <li><a href="#ceiling">天花抽濕機</a></li>
-        <li><a href="#industrial">工業抽濕機</a></li>
-        <li><a href="#features">功能特點</a></li>
-        <li><a href="#contact" class="nav-cta">聯絡我們</a></li>
+        <li class="has-dropdown">
+          <a href="#mobile-section">移動式抽濕機 ▾</a>
+          <ul class="dropdown">
+            <li><a href="#mobile-section">65升/日 DBA-DH65</a></li>
+            <li><a href="#mobile-section">65升/日 DE-X65</a></li>
+            <li><a href="#mobile-section">75升/日 LGR系列</a></li>
+            <li><a href="#mobile-section">150升/日 DE-C150</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#ceiling-section">天花抽濕機 ▾</a>
+          <ul class="dropdown">
+            <li><a href="#ceiling-section">超薄版系列 (20–120升)</a></li>
+            <li><a href="#ceiling-section">商用系列 (68–550升)</a></li>
+          </ul>
+        </li>
+        <li><a href="#industrial-section">工業抽濕機</a></li>
+        <li><a href="#specialist-section">恆濕機 / 轉輪機</a></li>
+        <li><a href="#contact" class="nav-cta">立即查詢</a></li>
       </ul>
-      <button class="nav-mobile-btn" onclick="toggleNav()">☰</button>
+      <button class="nav-mobile-btn" onclick="toggleNav()" aria-label="Menu">☰</button>
     </div>
     <ul class="mobile-nav" id="mobileNav">
-      <li><a href="#products" onclick="toggleNav()">移動式抽濕機</a></li>
-      <li><a href="#ceiling" onclick="toggleNav()">天花抽濕機</a></li>
-      <li><a href="#industrial" onclick="toggleNav()">工業抽濕機</a></li>
-      <li><a href="#features" onclick="toggleNav()">功能特點</a></li>
+      <li><a href="#mobile-section" onclick="toggleNav()">移動式抽濕機</a></li>
+      <li><a href="#ceiling-section" onclick="toggleNav()">天花抽濕機</a></li>
+      <li><a href="#industrial-section" onclick="toggleNav()">工業抽濕機</a></li>
+      <li><a href="#specialist-section" onclick="toggleNav()">恆濕機 / 轉輪機</a></li>
       <li><a href="#contact" onclick="toggleNav()">聯絡我們</a></li>
     </ul>
   </nav>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <p class="hero-tag">香港抽濕機專門店</p>
+        <p class="hero-eyebrow">香港抽濕機專門店 · 20年行業經驗</p>
         <h1>全屋抽濕<br /><span class="red">一部機搞掂</span></h1>
-        <p class="hero-sub">享受乾爽舒適生活。智能控制、WiFi遙控、自動排水，維持理想濕度，即日免費香港送貨。</p>
+        <p class="hero-sub">智能控制、WiFi遙控、自動排水，輕鬆維持理想濕度。全線產品即日免費送貨，一年保修。</p>
         <div class="hero-actions">
-          <a href="#products" class="btn-primary">立即選購</a>
-          <a href="#ceiling" class="btn-outline">天花抽濕機</a>
+          <a href="#mobile-section" class="btn-primary">立即選購</a>
+          <a href="tel:+85221210968" class="btn-outline">📞 +852 2121 0968</a>
         </div>
-        <div class="hero-badges">
-          <div class="badge-item"><span class="badge-num">20</span><span class="badge-label">年行業經驗</span></div>
-          <div class="badge-item"><span class="badge-num">即日</span><span class="badge-label">免費送貨</span></div>
-          <div class="badge-item"><span class="badge-num">1年</span><span class="badge-label">保修保證</span></div>
+        <div class="trust-badges">
+          <div class="trust-item"><span class="trust-n">20年</span><span>行業經驗</span></div>
+          <div class="trust-item"><span class="trust-n">即日</span><span>免費送貨</span></div>
+          <div class="trust-item"><span class="trust-n">1年</span><span>保修保證</span></div>
+          <div class="trust-item"><span class="trust-n">28+</span><span>型號選擇</span></div>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-product-card">
-          <div class="product-img-placeholder ceiling-img">
-            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="200" fill="#f5f5f5"/>
-              <rect x="30" y="60" width="140" height="80" rx="8" fill="#e0e0e0"/>
-              <rect x="50" y="80" width="100" height="40" rx="4" fill="#d0d0d0"/>
-              <rect x="85" y="150" width="30" height="15" rx="2" fill="#e0e0e0"/>
-              <circle cx="100" cy="100" r="12" fill="#bdbdbd"/>
-              <rect x="40" y="70" width="8" height="8" rx="2" fill="#aaa"/>
-              <rect x="152" y="70" width="8" height="8" rx="2" fill="#aaa"/>
-            </svg>
-          </div>
-          <div class="hero-card-info">
-            <span class="hero-card-tag">最受歡迎</span>
-            <p class="hero-card-name">天花抽濕機系列</p>
-            <p class="hero-card-range">20 – 550 升/日</p>
+      <div class="hero-img-col">
+        <div class="hero-product-showcase">
+          <img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-DH65.123.jpg?v=1746718520" alt="DBA-DH65 移動抽濕機" class="hero-main-img" />
+          <div class="hero-tag-pill">熱賣 · HK$5,500</div>
+          <div class="hero-mini-cards">
+            <div class="mini-card">
+              <img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-UTC20-02.jpg?v=1698677501" alt="天花抽濕機" />
+              <span>天花系列</span>
+            </div>
+            <div class="mini-card">
+              <img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-GEM75LDP1.jpg?v=1698677924" alt="LGR抽濕機" />
+              <span>LGR系列</span>
+            </div>
           </div>
         </div>
-        <div class="hero-floating-tag">WiFi App 控制</div>
       </div>
     </div>
-
-    <div class="category-bar">
-      <a href="#products" class="cat-item">
-        <div class="cat-icon">💧</div>
-        <span>移動式抽濕機</span>
-        <small>65–138 升/日</small>
-      </a>
-      <a href="#ceiling" class="cat-item">
-        <div class="cat-icon">🏠</div>
-        <span>天花抽濕機</span>
-        <small>20–550 升/日</small>
-      </a>
-      <a href="#industrial" class="cat-item">
-        <div class="cat-icon">🏭</div>
-        <span>工業抽濕機</span>
-        <small>138–550 升/日</small>
-      </a>
-      <a href="#products" class="cat-item">
-        <div class="cat-icon">🎒</div>
-        <span>手提式抽濕機</span>
-        <small>輕巧移動</small>
-      </a>
+    <div class="cat-bar">
+      <a href="#mobile-section" class="cat-item"><span class="cat-icon">💧</span><strong>移動式</strong><small>65–150 升/日</small></a>
+      <a href="#ceiling-section" class="cat-item"><span class="cat-icon">🏠</span><strong>天花式</strong><small>20–550 升/日</small></a>
+      <a href="#industrial-section" class="cat-item"><span class="cat-icon">🏭</span><strong>工業式</strong><small>280–550 升/日</small></a>
+      <a href="#mobile-section" class="cat-item"><span class="cat-icon">🎒</span><strong>手提式</strong><small>輕巧靈活</small></a>
+      <a href="#specialist-section" class="cat-item"><span class="cat-icon">⚖️</span><strong>恆濕機</strong><small>加濕抽濕 2合1</small></a>
+      <a href="#specialist-section" class="cat-item"><span class="cat-icon">🔄</span><strong>轉輪機</strong><small>低溫適用</small></a>
     </div>
   </section>
 
-  <!-- Products: Mobile -->
-  <section id="products" class="section">
+  <!-- MOBILE DEHUMIDIFIERS -->
+  <section id="mobile-section" class="section">
     <div class="section-inner">
-      <div class="section-header">
-        <h2>移動式抽濕機</h2>
-        <p>靈活移動，適用於500–3000呎空間</p>
-        <a href="#contact" class="btn-link">查看更多型號 →</a>
+      <div class="section-head">
+        <div>
+          <h2>移動式抽濕機</h2>
+          <p>靈活移動，適用500–2000呎空間，全自動排水，WiFi遙控</p>
+        </div>
+        <a href="#contact" class="btn-link">查詢更多 →</a>
       </div>
       <div class="product-grid">
-        <div class="product-card">
-          <div class="product-badge sale">熱賣</div>
-          <div class="product-img">
-            <div class="img-placeholder">
-              <svg viewBox="0 0 160 180" fill="none"><rect width="160" height="180" fill="#f8f8f8"/><rect x="20" y="20" width="120" height="130" rx="8" fill="#e8e8e8"/><rect x="35" y="40" width="90" height="70" rx="4" fill="#d5d5d5"/><rect x="55" y="155" width="50" height="12" rx="3" fill="#e0e0e0"/><circle cx="80" cy="75" r="20" fill="#c8c8c8"/></svg>
+
+        <div class="product-card" data-aos>
+          <div class="p-badge hot">熱賣</div>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-DH65.123.jpg?v=1746718520" alt="DBA-DH65" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">65升/日 移動抽濕機 DBA-DH65</p>
+            <ul class="p-specs">
+              <li>抽濕量：65升/日</li>
+              <li>適用：700–1000呎</li>
+              <li>HEPA過濾 + 等離子淨化</li>
+              <li>WiFi App 遠程控制</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price">HK$5,500</span>
+              <a href="#contact" class="btn-cart">立即選購</a>
             </div>
-          </div>
-          <div class="product-info">
-            <p class="product-vendor">DBA</p>
-            <p class="product-name">65升/日 移動抽濕機 DBA-DH65</p>
-            <p class="product-price">HK$5,500</p>
-            <a href="#contact" class="btn-cart">立即選購</a>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-badge new">新品</div>
-          <div class="product-img">
-            <div class="img-placeholder">
-              <svg viewBox="0 0 160 180" fill="none"><rect width="160" height="180" fill="#f8f8f8"/><rect x="20" y="20" width="120" height="130" rx="8" fill="#e8e8e8"/><rect x="35" y="40" width="90" height="70" rx="4" fill="#d5d5d5"/><rect x="55" y="155" width="50" height="12" rx="3" fill="#e0e0e0"/><circle cx="80" cy="75" r="20" fill="#c8c8c8"/></svg>
+
+        <div class="product-card" data-aos>
+          <div class="p-badge new">新品</div>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DE-X65.jpg?v=1725805261" alt="DE-X65" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DryEaz</p>
+            <p class="p-name">65升/日 手提式抽濕機 DE-X65</p>
+            <ul class="p-specs">
+              <li>抽濕量：65升/日</li>
+              <li>適用：700–1000呎</li>
+              <li>可壁掛 / 天花懸掛</li>
+              <li>水泵自動排水</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price">HK$7,880</span>
+              <a href="#contact" class="btn-cart">立即選購</a>
             </div>
-          </div>
-          <div class="product-info">
-            <p class="product-vendor">DryEaz</p>
-            <p class="product-name">65升/日 手提式抽濕機 DE-X65</p>
-            <p class="product-price">HK$7,880</p>
-            <a href="#contact" class="btn-cart">立即選購</a>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-img">
-            <div class="img-placeholder">
-              <svg viewBox="0 0 160 180" fill="none"><rect width="160" height="180" fill="#f8f8f8"/><rect x="20" y="20" width="120" height="130" rx="8" fill="#e8e8e8"/><rect x="35" y="40" width="90" height="70" rx="4" fill="#d5d5d5"/><rect x="55" y="155" width="50" height="12" rx="3" fill="#e0e0e0"/><circle cx="80" cy="75" r="20" fill="#c8c8c8"/></svg>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-GEM75LDP1.jpg?v=1698677924" alt="DBA-GEM75LD" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">75升/日 LGR移動型抽濕機 DBA-GEM75LD</p>
+            <ul class="p-specs">
+              <li>抽濕量：75升/日</li>
+              <li>自動排水泵，揚程4.5米</li>
+              <li>LCD控制屏</li>
+              <li>斷電記憶功能</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price">HK$9,800</span>
+              <a href="#contact" class="btn-cart">立即選購</a>
             </div>
-          </div>
-          <div class="product-info">
-            <p class="product-vendor">DryEaz</p>
-            <p class="product-name">150升/日 移動型抽濕機 DE-C150</p>
-            <p class="product-price">HK$12,800</p>
-            <a href="#contact" class="btn-cart">立即選購</a>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-img">
-            <div class="img-placeholder">
-              <svg viewBox="0 0 160 180" fill="none"><rect width="160" height="180" fill="#f8f8f8"/><rect x="20" y="20" width="120" height="130" rx="8" fill="#e8e8e8"/><rect x="35" y="40" width="90" height="70" rx="4" fill="#d5d5d5"/><rect x="55" y="155" width="50" height="12" rx="3" fill="#e0e0e0"/><circle cx="80" cy="75" r="20" fill="#c8c8c8"/></svg>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/2_b4676f6b-ea40-4834-bf6b-b7db63de3826.jpg?v=1746718553" alt="DBA-GEX75" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">75升/日 LGR移動型抽濕機 DBA-GEX75</p>
+            <ul class="p-specs">
+              <li>抽濕量：75升/日</li>
+              <li>適用：1000呎</li>
+              <li>WiFi App遠程控制</li>
+              <li>排水泵揚程5米</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price">HK$10,500</span>
+              <a href="#contact" class="btn-cart">立即選購</a>
             </div>
           </div>
-          <div class="product-info">
-            <p class="product-vendor">DBA</p>
-            <p class="product-name">75升/日 LGR移動型抽濕機 DBA-GEM75LD</p>
-            <p class="product-price">HK$9,800</p>
-            <a href="#contact" class="btn-cart">立即選購</a>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DE-C150.1.jpg?v=1746721088" alt="DE-C150" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DryEaz</p>
+            <p class="p-name">150升/日 移動型抽濕機 DE-C150（水箱款）</p>
+            <ul class="p-specs">
+              <li>抽濕量：150升/日</li>
+              <li>適用：1500–2000呎</li>
+              <li>8L水箱 / 可接排水管</li>
+              <li>5米防水電源線</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price">HK$12,800</span>
+              <a href="#contact" class="btn-cart">立即選購</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DE-C150.1.jpg?v=1746721088" alt="DE-C150 水泵款" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DryEaz</p>
+            <p class="p-name">150升/日 移動型抽濕機 DE-C150（水泵款）</p>
+            <ul class="p-specs">
+              <li>抽濕量：150升/日</li>
+              <li>適用：1500–2000呎</li>
+              <li>水泵自動排水，揚程6米</li>
+              <li>5米防水電源線</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price">HK$12,800</span>
+              <a href="#contact" class="btn-cart">立即選購</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-badge enquire">查詢</div>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/3_6e029ed2-9f42-4680-859f-389e039ed6de.jpg?v=1746718496" alt="DBA-GEM110" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">110升/日 LGR移動型抽濕機 DBA-GEM110</p>
+            <ul class="p-specs">
+              <li>抽濕量：110升/日</li>
+              <li>適用：1500呎</li>
+              <li>WiFi App遠程控制</li>
+              <li>全自動排水泵</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-badge enquire">查詢</div>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/1_79d522b7-6274-4949-9203-37d5b065d6c4.jpg?v=1746718712" alt="DBA-GEX110" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">110升/日 LGR移動型抽濕機 DBA-GEX110</p>
+            <ul class="p-specs">
+              <li>抽濕量：110升/日</li>
+              <li>適用：1500呎</li>
+              <li>WiFi App遠程控制</li>
+              <li>全自動排水泵</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WALL-MOUNT -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-head">
+        <div><h2>掛牆式抽濕機</h2><p>節省地面空間，固定安裝，持續保持乾爽</p></div>
+      </div>
+      <div class="product-grid single-row">
+        <div class="product-card wide-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-GEW70LD.jpg?v=1725819520" alt="DBA-GEW80LD" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">80升/日 掛牆式抽濕機 DBA-GEW80LD</p>
+            <ul class="p-specs two-col">
+              <li>抽濕量：80升/日</li>
+              <li>適用範圍：1000呎</li>
+              <li>精準濕度調節 ±1%</li>
+              <li>高效除霜系統</li>
+              <li>RS485通訊接口</li>
+              <li>斷電記憶功能</li>
+              <li>1–24小時定時功能</li>
+              <li>自動故障診斷系統</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ceiling Section -->
-  <section id="ceiling" class="section section-alt">
+  <!-- CEILING -->
+  <section id="ceiling-section" class="section">
     <div class="section-inner">
-      <div class="section-header">
-        <h2>天花抽濕機</h2>
-        <p>隱藏式安裝，全屋抽濕，節省空間</p>
+      <div class="section-head">
+        <div><h2>天花抽濕機</h2><p>隱藏式安裝，全屋抽濕，UV-C殺菌，WiFi遙控</p></div>
+        <a href="#contact" class="btn-link">查詢報價 →</a>
       </div>
-      <div class="ceiling-layout">
-        <div class="ceiling-features">
-          <div class="cf-item">
-            <div class="cf-icon">📐</div>
-            <div>
-              <h3>節省空間</h3>
-              <p>隱藏式安裝在天花板上，不佔用寶貴的居住空間</p>
-            </div>
-          </div>
-          <div class="cf-item">
-            <div class="cf-icon">💧</div>
-            <div>
-              <h3>無需倒水</h3>
-              <p>內置排水泵自動將水排走，內置防漏水位感應器，安全可靠</p>
-            </div>
-          </div>
-          <div class="cf-item">
-            <div class="cf-icon">🔇</div>
-            <div>
-              <h3>運作寧靜</h3>
-              <p>臥式壓縮機和變頻風扇電機，噪音量遠低於傳統家用抽濕機</p>
-            </div>
-          </div>
-          <div class="cf-item">
-            <div class="cf-icon">🏡</div>
-            <div>
-              <h3>一部機，多個房間</h3>
-              <p>通過管道式安裝，把乾燥空氣派送到每一個房間</p>
-            </div>
-          </div>
-          <div class="cf-item">
-            <div class="cf-icon">📱</div>
-            <div>
-              <h3>WiFi App 智能控制</h3>
-              <p>手機WiFi App隨時監控室內濕度，支援RS485整合到BMS</p>
-            </div>
-          </div>
-          <div class="cf-item">
-            <div class="cf-icon">⚡</div>
-            <div>
-              <h3>節能高效</h3>
-              <p>只需冷氣機1/4耗電量，根據設定濕度自動啟停</p>
+
+      <h3 class="sub-heading">超薄版系列（家用 / 小型商用）</h3>
+      <div class="product-grid" style="margin-bottom:48px">
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-UTC20-02.jpg?v=1698677501" alt="DBA-UTC20" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">20升/日 天花抽濕機 DBA-UTC20（超薄版）</p>
+            <ul class="p-specs">
+              <li>適用：200–400呎</li>
+              <li>UV-C殺菌裝置</li>
+              <li>內置排水泵，揚程1.2米</li>
+              <li>LCD輕觸控制屏 + 遙控器</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
             </div>
           </div>
         </div>
-        <div class="ceiling-products">
-          <div class="product-card">
-            <div class="product-img">
-              <div class="img-placeholder ceiling-ph">
-                <svg viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#f0f0f0"/><rect x="10" y="20" width="140" height="60" rx="6" fill="#e0e0e0"/><rect x="25" y="35" width="110" height="30" rx="3" fill="#d0d0d0"/><rect x="70" y="85" width="20" height="20" rx="2" fill="#e0e0e0"/></svg>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-vendor">DBA</p>
-              <p class="product-name">20升/日 天花抽濕機 DBA-UTC20 (超薄版)</p>
-              <a href="#contact" class="btn-cart">查詢價格</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-img">
-              <div class="img-placeholder ceiling-ph">
-                <svg viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#f0f0f0"/><rect x="10" y="20" width="140" height="60" rx="6" fill="#e0e0e0"/><rect x="25" y="35" width="110" height="30" rx="3" fill="#d0d0d0"/><rect x="70" y="85" width="20" height="20" rx="2" fill="#e0e0e0"/></svg>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-vendor">DBA</p>
-              <p class="product-name">68升/日 天花抽濕機 DBA-UTC68 (超薄版)</p>
-              <a href="#contact" class="btn-cart">查詢價格</a>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-UTC68-02.jpg?v=1698677484" alt="DBA-UTC68" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">68升/日 天花抽濕機 DBA-UTC68（超薄版）</p>
+            <ul class="p-specs">
+              <li>適用：800–1000呎</li>
+              <li>UV-C殺菌裝置</li>
+              <li>內置排水泵，揚程1.2米</li>
+              <li>全自動濕度控制</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
             </div>
           </div>
-          <div class="product-card">
-            <div class="product-img">
-              <div class="img-placeholder ceiling-ph">
-                <svg viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#f0f0f0"/><rect x="10" y="20" width="140" height="60" rx="6" fill="#e0e0e0"/><rect x="25" y="35" width="110" height="30" rx="3" fill="#d0d0d0"/><rect x="70" y="85" width="20" height="20" rx="2" fill="#e0e0e0"/></svg>
-              </div>
-            </div>
-            <div class="product-info">
-              <p class="product-vendor">DBA</p>
-              <p class="product-name">120升/日 天花抽濕機 DBA-UTC120 (超薄版)</p>
-              <a href="#contact" class="btn-cart">查詢價格</a>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-UTC120-02.jpg?v=1698677463" alt="DBA-UTC120" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">120升/日 天花抽濕機 DBA-UTC120（超薄版）</p>
+            <ul class="p-specs">
+              <li>適用：1300–1500呎</li>
+              <li>UV-C殺菌裝置</li>
+              <li>內置排水泵，揚程1.2米</li>
+              <li>全自動濕度控制</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
             </div>
           </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-GEC68LD-HP-02.jpg?v=1698677392" alt="DBA-GEC68LD-HP" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">68升/日 天花抽濕機 DBA-GEC68LD-HP</p>
+            <ul class="p-specs">
+              <li>適用：800–1000呎</li>
+              <li>UV-C殺菌裝置</li>
+              <li>WiFi App + RS485</li>
+              <li>±1% 精準濕度調節</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="sub-heading">商用系列（大型空間）</h3>
+      <div class="product-grid">
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/145-01.jpg?v=1698677815" alt="DBA-GEC145LD-HP" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">145升/日 天花抽濕機 DBA-GEC145LD-HP</p>
+            <ul class="p-specs">
+              <li>適用：1500–1700呎</li>
+              <li>UV-C殺菌 + WiFi App</li>
+              <li>RS485 BMS整合</li>
+              <li>±1% 精準濕度調節</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-GEC280.400.550-01.jpg?v=1748154485" alt="DBA-GEC280LD" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">280升/日 天花抽濕機 DBA-GEC280LD-HP</p>
+            <ul class="p-specs">
+              <li>適用：2500–3000呎</li>
+              <li>WiFi App + RS485</li>
+              <li>斷電記憶功能</li>
+              <li>24小時定時功能</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-GEC280.400.550-04.jpg?v=1748154532" alt="DBA-GEC400LD" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">400升/日 天花抽濕機 DBA-GEC400LD-HP</p>
+            <ul class="p-specs">
+              <li>適用：4000呎</li>
+              <li>WiFi App + RS485</li>
+              <li>高效自動化霜系統</li>
+              <li>系統故障自動診斷</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-GEC280.400.550-04_96565545-3517-4162-ae2d-6aba2ede61d5.jpg?v=1748154554" alt="DBA-GEC550LD" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">550升/日 天花抽濕機 DBA-GEC550LD-HP</p>
+            <ul class="p-specs">
+              <li>適用：4000–5000呎</li>
+              <li>WiFi App + RS485</li>
+              <li>水滿警報功能</li>
+              <li>±1% 精準濕度調節</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CEILING FEATURES STRIP -->
+  <section class="features-strip">
+    <div class="section-inner">
+      <h2>為何選擇天花抽濕機？</h2>
+      <div class="features-grid">
+        <div class="feat"><div class="feat-icon">📐</div><h3>節省空間</h3><p>隱藏安裝於天花，不佔居住空間</p></div>
+        <div class="feat"><div class="feat-icon">💧</div><h3>無需倒水</h3><p>內置排水泵自動排水，防漏感應器保護</p></div>
+        <div class="feat"><div class="feat-icon">🔇</div><h3>運作寧靜</h3><p>臥式壓縮機，噪音低於傳統家用型號</p></div>
+        <div class="feat"><div class="feat-icon">🏡</div><h3>全屋覆蓋</h3><p>管道安裝，乾燥空氣派送至每個房間</p></div>
+        <div class="feat"><div class="feat-icon">🦠</div><h3>UV-C殺菌</h3><p>6秒消滅99%病菌，HEPA去除PM2.5</p></div>
+        <div class="feat"><div class="feat-icon">📱</div><h3>WiFi智能控制</h3><p>App遙控，RS485接入智能家居/BMS</p></div>
+        <div class="feat"><div class="feat-icon">⚡</div><h3>節能高效</h3><p>只需冷氣機1/4耗電，自動啟停省電</p></div>
+        <div class="feat"><div class="feat-icon">🌬️</div><h3>新風功能</h3><p>四合一模式：抽濕、新風、混合、自動</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIAL -->
+  <section id="industrial-section" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-head">
+        <div><h2>工業抽濕機</h2><p>適用倉庫、製造廠、風櫃房等大型空間，不銹鋼水箱，揚程8–10米</p></div>
+        <a href="#contact" class="btn-link">查詢報價 →</a>
+      </div>
+      <div class="product-grid">
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-GE280LD-HP_LT_2023-02.jpg?v=1698677591" alt="DBA-GE280LD" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">280升/日 工業抽濕機 DBA-GE280LD-HP(LT)</p>
+            <ul class="p-specs">
+              <li>適用：3000–3800呎</li>
+              <li>不銹鋼水箱，耐用防銹</li>
+              <li>排水泵揚程8–10米</li>
+              <li>LED大屏控制器</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-GE550LD-HP_LT_2023-09_00e7156e-3129-45e8-92df-55454cce591a.jpg?v=1698677576" alt="DBA-GE400LD" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">400升/日 工業抽濕機 DBA-GE400LD-HP(LT)</p>
+            <ul class="p-specs">
+              <li>適用：4000–4500呎</li>
+              <li>不銹鋼水箱，耐用防銹</li>
+              <li>排水泵揚程8–10米</li>
+              <li>微電腦全自動控制</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-GE550LD-HP_LT_2023-09.jpg?v=1698677412" alt="DBA-GE550LD" loading="lazy" /></div>
+          <div class="p-info">
+            <p class="p-vendor">DBA</p>
+            <p class="p-name">550升/日 工業抽濕機 DBA-GE550LD-HP(LT)</p>
+            <ul class="p-specs">
+              <li>適用：5000–6000呎</li>
+              <li>不銹鋼水箱，耐用防銹</li>
+              <li>排水泵揚程8–10米</li>
+              <li>實時溫濕度顯示</li>
+            </ul>
+            <div class="p-price-row">
+              <span class="p-price enquire-price">查詢價格</span>
+              <a href="#contact" class="btn-cart">立即查詢</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALIST: 恆濕機 + 轉輪機 -->
+  <section id="specialist-section" class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div><h2>恆濕機 &amp; 轉輪抽濕機</h2><p>精密濕度控制，適用畫廊、酒窖、實驗室、冷庫</p></div>
+      </div>
+
+      <h3 class="sub-heading">恆濕機（抽濕 + 加濕 2合1）</h3>
+      <div class="product-grid" style="margin-bottom:48px">
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/DBA-HC145.png?v=1705421171" alt="DBA-HC68" loading="lazy" /></div>
+          <div class="p-info"><p class="p-vendor">DBA</p><p class="p-name">68升/日 恆濕機 DBA-HC68</p><ul class="p-specs"><li>濕膜汽化加濕</li><li>7寸顯示屏</li><li>RS485遠程控制</li><li>自動泵排水，揚程10米</li></ul><div class="p-price-row"><span class="p-price enquire-price">查詢價格</span><a href="#contact" class="btn-cart">立即查詢</a></div></div>
+        </div>
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/Screenshot2022-06-06at1.40.13PM_c354c480-f3b5-4354-bd41-41f65edd202f.png?v=1705421187" alt="DBA-HC145" loading="lazy" /></div>
+          <div class="p-info"><p class="p-vendor">DBA</p><p class="p-name">145升/日 恆濕機 DBA-HC145</p><ul class="p-specs"><li>濕膜汽化加濕</li><li>7寸顯示屏</li><li>淨水過濾系統</li><li>RS485遠程控制</li></ul><div class="p-price-row"><span class="p-price enquire-price">查詢價格</span><a href="#contact" class="btn-cart">立即查詢</a></div></div>
+        </div>
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/Screenshot2022-06-06at1.40.13PM.png?v=1705421174" alt="DBA-HC280" loading="lazy" /></div>
+          <div class="p-info"><p class="p-vendor">DBA</p><p class="p-name">280升/日 恆濕機 DBA-HC280</p><ul class="p-specs"><li>自動上水模式</li><li>自動清洗水箱功能</li><li>RS485遠程集中控制</li><li>多重安全保護</li></ul><div class="p-price-row"><span class="p-price enquire-price">查詢價格</span><a href="#contact" class="btn-cart">立即查詢</a></div></div>
+        </div>
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/Screenshot2022-06-06at1.42.00PM.png?v=1705421179" alt="DBA-HC400" loading="lazy" /></div>
+          <div class="p-info"><p class="p-vendor">DBA</p><p class="p-name">400升/日 恆濕機 DBA-HC400</p><ul class="p-specs"><li>適用：畫廊、酒窖、博物館</li><li>7寸顯示屏，全中文界面</li><li>排水揚程10米</li><li>淨水過濾系統</li></ul><div class="p-price-row"><span class="p-price enquire-price">查詢價格</span><a href="#contact" class="btn-cart">立即查詢</a></div></div>
+        </div>
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/products/Screenshot2022-06-06at1.42.00PM_2f632838-ed52-4fda-b5cb-a815d3874de2.png?v=1705421184" alt="DBA-HC550" loading="lazy" /></div>
+          <div class="p-info"><p class="p-vendor">DBA</p><p class="p-name">550升/日 恆濕機 DBA-HC550</p><ul class="p-specs"><li>大型空間精密控濕</li><li>適用：數據中心、實驗室</li><li>RS485遠程集中控制</li><li>缺相/過流保護</li></ul><div class="p-price-row"><span class="p-price enquire-price">查詢價格</span><a href="#contact" class="btn-cart">立即查詢</a></div></div>
+        </div>
+      </div>
+
+      <h3 class="sub-heading">轉輪抽濕機（低溫 -20°C 適用）</h3>
+      <div class="product-grid">
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-DD-01.jpg?v=1725819504" alt="DBA-DD210" loading="lazy" /></div>
+          <div class="p-info"><p class="p-vendor">DBA</p><p class="p-name">1kg/hr 低溫轉輪抽濕機 DBA-DD210</p><ul class="p-specs"><li>控濕：RH1%–90% ±3%</li><li>工作溫度：-20°C–40°C</li><li>7寸顯示屏</li><li>RS485遠程控制</li></ul><div class="p-price-row"><span class="p-price enquire-price">查詢價格</span><a href="#contact" class="btn-cart">立即查詢</a></div></div>
+        </div>
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-DD-02.jpg?v=1725819506" alt="DBA-DD550" loading="lazy" /></div>
+          <div class="p-info"><p class="p-vendor">DBA</p><p class="p-name">2.5kg/hr 低溫轉輪抽濕機 DBA-DD550</p><ul class="p-specs"><li>控濕：RH1%–90% ±3%</li><li>工作溫度：-20°C–40°C</li><li>適用：製藥廠、冷庫</li><li>高精度溫濕度感測器</li></ul><div class="p-price-row"><span class="p-price enquire-price">查詢價格</span><a href="#contact" class="btn-cart">立即查詢</a></div></div>
+        </div>
+        <div class="product-card" data-aos>
+          <div class="p-img"><img src="https://cdn.shopify.com/s/files/1/0771/3544/6311/files/DBA-DD-03.jpg?v=1725819509" alt="DBA-DD850" loading="lazy" /></div>
+          <div class="p-info"><p class="p-vendor">DBA</p><p class="p-name">7.5kg/hr 低溫轉輪抽濕機 DBA-DD850</p><ul class="p-specs"><li>控濕：RH1%–90% ±3%</li><li>工作溫度：-20°C–40°C</li><li>7寸顯示屏</li><li>多重安全保護系統</li></ul><div class="p-price-row"><span class="p-price enquire-price">查詢價格</span><a href="#contact" class="btn-cart">立即查詢</a></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Industrial -->
-  <section id="industrial" class="section">
+  <!-- WHY DRYEAZ -->
+  <section class="why-section">
     <div class="section-inner">
-      <div class="section-header">
-        <h2>工業抽濕機 / 專業設備</h2>
-        <p>適用於倉庫、製造廠、實驗室等大型空間</p>
-      </div>
-      <div class="industrial-grid">
-        <div class="industrial-card">
-          <div class="ind-icon">🏭</div>
-          <h3>大型工業抽濕機</h3>
-          <p>高效耐用，能在苛刻工業環境中長時間運行，280–550升/日</p>
-          <ul>
-            <li>DBA-GE280LD-HP(LT) — 280升/日</li>
-            <li>DBA-GE400LD-HP(LT) — 400升/日</li>
-            <li>DBA-GE550LD-HP(LT) — 550升/日</li>
-          </ul>
-          <a href="#contact" class="btn-outline-dark">查詢報價</a>
-        </div>
-        <div class="industrial-card">
-          <div class="ind-icon">⚖️</div>
-          <h3>恆濕機（抽濕+加濕）</h3>
-          <p>同時具備抽濕和加濕功能，濕度控制更精準穩定</p>
-          <ul>
-            <li>適用：畫廊、酒窖、博物館</li>
-            <li>適用：實驗室、數據中心</li>
-            <li>精密濕度控制 ±2%RH</li>
-          </ul>
-          <a href="#contact" class="btn-outline-dark">查詢報價</a>
-        </div>
-        <div class="industrial-card">
-          <div class="ind-icon">🔄</div>
-          <h3>轉輪抽濕機（低溫適用）</h3>
-          <p>矽膠蜂窩狀抽濕輪，低溫環境中保持高效抽濕能力</p>
-          <ul>
-            <li>適用：實驗室、冷庫</li>
-            <li>適用：製藥廠、食品廠</li>
-            <li>低溫 -20°C 仍高效運作</li>
-          </ul>
-          <a href="#contact" class="btn-outline-dark">查詢報價</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why DryEaz -->
-  <section id="features" class="section why-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>為什麼選擇 DryEaz？</h2>
-        <p>香港亞熱帶氣候，濕度高達80–90%，抽濕機是必備家電</p>
-      </div>
+      <h2>為什麼選擇 DryEaz？</h2>
       <div class="why-grid">
-        <div class="why-card accent">
-          <div class="why-num">20年</div>
-          <h3>行業經驗</h3>
-          <p>憑著多年經驗，為客戶提供最合適的抽濕方案及技術支援</p>
-        </div>
-        <div class="why-card">
-          <div class="why-num">即日</div>
-          <h3>免費送貨</h3>
-          <p>所有產品均現貨發售，長期保持充足貨源，最快即日送貨</p>
-        </div>
-        <div class="why-card">
-          <div class="why-num">1年</div>
-          <h3>保修保證</h3>
-          <p>全線產品提供一年保修，信心保證，售後服務有保障</p>
-        </div>
-        <div class="why-card">
-          <div class="why-num">1/4</div>
-          <h3>超低耗電量</h3>
-          <p>相較冷氣機，天花抽濕機只需1/4耗電量即可維持全屋乾爽</p>
-        </div>
+        <div class="why-card accent"><div class="why-n">20年</div><h3>行業經驗</h3><p>為客戶提供最合適的抽濕方案及技術支援</p></div>
+        <div class="why-card"><div class="why-n">即日</div><h3>免費送貨</h3><p>現貨發售，長期充足貨源，最快即日送達</p></div>
+        <div class="why-card"><div class="why-n">1年</div><h3>保修保證</h3><p>全線產品提供一年保修，信心保證</p></div>
+        <div class="why-card"><div class="why-n">1/4</div><h3>超低耗電</h3><p>天花抽濕機只需冷氣1/4耗電量維持全屋乾爽</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Size Guide -->
-  <section class="section section-alt size-guide">
+  <!-- SIZE GUIDE -->
+  <section class="section section-alt">
     <div class="section-inner">
-      <div class="section-header">
-        <h2>按面積選型</h2>
-        <p>不確定需要哪款型號？根據您的空間面積選擇合適的抽濕機</p>
-      </div>
+      <div class="section-head"><div><h2>按面積選型</h2><p>根據空間大小選擇最合適的抽濕機型號</p></div></div>
       <div class="size-table">
-        <div class="size-row header">
-          <span>空間面積</span>
-          <span>推薦類型</span>
-          <span>推薦型號</span>
-        </div>
-        <div class="size-row">
-          <span>500–1000 呎</span>
-          <span>座地式 / 移動式</span>
-          <span>DBA-DH65 / DE-X65</span>
-        </div>
-        <div class="size-row">
-          <span>1000–1500 呎</span>
-          <span>移動式 / 天花式</span>
-          <span>DE-C150 / DBA-UTC68</span>
-        </div>
-        <div class="size-row">
-          <span>1500–3000 呎</span>
-          <span>天花抽濕機</span>
-          <span>DBA-UTC120 / DBA-GEC68LD</span>
-        </div>
-        <div class="size-row">
-          <span>3000 呎以上</span>
-          <span>工業 / 商用</span>
-          <span>DBA-GE280LD / DBA-GE400LD</span>
-        </div>
+        <div class="size-row hd"><span>空間面積</span><span>推薦類型</span><span>推薦型號</span></div>
+        <div class="size-row"><span>200–400 呎</span><span>天花抽濕機</span><span>DBA-UTC20</span></div>
+        <div class="size-row"><span>500–1000 呎</span><span>移動式 / 天花式</span><span>DBA-DH65 · DE-X65 · DBA-UTC68</span></div>
+        <div class="size-row"><span>1000–1500 呎</span><span>移動式 / 天花式</span><span>DBA-GEM75LD · DBA-UTC120</span></div>
+        <div class="size-row"><span>1500–2000 呎</span><span>移動式 / 天花式</span><span>DE-C150 · DBA-GEC145LD-HP</span></div>
+        <div class="size-row"><span>2500–3000 呎</span><span>天花抽濕機</span><span>DBA-GEC280LD-HP</span></div>
+        <div class="size-row"><span>3000–4000 呎</span><span>工業 / 天花</span><span>DBA-GE280LD · DBA-GEC400LD</span></div>
+        <div class="size-row"><span>4000 呎以上</span><span>工業抽濕機</span><span>DBA-GE400LD · DBA-GE550LD</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <div class="section-inner contact-inner">
-      <div class="contact-text">
+      <div class="contact-left">
         <h2>聯絡我們</h2>
-        <p>我們的專業團隊將為您推薦最合適的抽濕方案</p>
-        <div class="contact-details">
-          <div class="contact-item">
-            <span class="contact-icon">📞</span>
-            <div>
-              <p class="contact-label">銷售熱線</p>
-              <a href="tel:+85221210968" class="contact-value">+852 2121 0968</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">📦</span>
-            <div>
-              <p class="contact-label">送貨服務</p>
-              <p class="contact-value">全香港免費送貨，最快即日</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">🔧</span>
-            <div>
-              <p class="contact-label">售後服務</p>
-              <p class="contact-value">一年保修，專業維修團隊</p>
-            </div>
-          </div>
+        <p>專業團隊為您推薦最合適的抽濕方案，歡迎查詢報價</p>
+        <div class="contact-items">
+          <div class="contact-item"><span>📞</span><div><p class="ci-label">銷售熱線</p><a href="tel:+85221210968" class="ci-val">+852 2121 0968</a></div></div>
+          <div class="contact-item"><span>🚚</span><div><p class="ci-label">送貨服務</p><p class="ci-val">全香港免費送貨，最快即日</p></div></div>
+          <div class="contact-item"><span>🔧</span><div><p class="ci-label">售後服務</p><p class="ci-val">一年保修，專業維修團隊</p></div></div>
+          <div class="contact-item"><span>🏢</span><div><p class="ci-label">商業採購</p><p class="ci-val">批量優惠，全屋方案訂製</p></div></div>
         </div>
       </div>
-      <form class="contact-form">
-        <input type="text" placeholder="您的姓名 Name" required />
-        <input type="tel" placeholder="聯絡電話 Phone" required />
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <input type="text" placeholder="姓名 Name *" required />
+          <input type="tel" placeholder="電話 Phone *" required />
+        </div>
         <input type="email" placeholder="電郵 Email" />
         <select>
-          <option value="">選擇產品類型 Product Type</option>
+          <option value="">產品類型 Product Type</option>
           <option>移動式抽濕機</option>
-          <option>天花抽濕機</option>
+          <option>天花抽濕機（超薄版）</option>
+          <option>天花抽濕機（商用）</option>
+          <option>掛牆式抽濕機</option>
           <option>工業抽濕機</option>
-          <option>手提式抽濕機</option>
           <option>恆濕機</option>
+          <option>轉輪抽濕機</option>
+          <option>全屋抽濕方案</option>
           <option>其他查詢</option>
         </select>
-        <textarea placeholder="您的查詢 Enquiry" rows="4"></textarea>
+        <textarea placeholder="查詢內容 Enquiry" rows="4"></textarea>
         <button type="submit" class="btn-primary btn-full">發送查詢 Send Enquiry</button>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-col">
+      <div class="fc">
         <a href="#" class="logo footer-logo">Dry<span>Eaz</span></a>
         <p>香港抽濕機專門店<br />Dehumidifier Specialists HK</p>
-        <p class="footer-phone">📞 +852 2121 0968</p>
+        <a href="tel:+85221210968" class="footer-phone">📞 +852 2121 0968</a>
       </div>
-      <div class="footer-col">
-        <h4>產品系列</h4>
+      <div class="fc">
+        <h4>移動式抽濕機</h4>
         <ul>
-          <li><a href="#products">移動式抽濕機</a></li>
-          <li><a href="#ceiling">天花抽濕機</a></li>
-          <li><a href="#industrial">工業抽濕機</a></li>
-          <li><a href="#products">手提式抽濕機</a></li>
-          <li><a href="#industrial">恆濕機</a></li>
+          <li><a href="#mobile-section">DBA-DH65 · 65升/日</a></li>
+          <li><a href="#mobile-section">DE-X65 · 65升/日</a></li>
+          <li><a href="#mobile-section">DBA-GEM75LD · 75升/日</a></li>
+          <li><a href="#mobile-section">DE-C150 · 150升/日</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>服務</h4>
+      <div class="fc">
+        <h4>天花 / 工業</h4>
+        <ul>
+          <li><a href="#ceiling-section">超薄版系列 (20–120升)</a></li>
+          <li><a href="#ceiling-section">商用天花 (145–550升)</a></li>
+          <li><a href="#industrial-section">工業抽濕機</a></li>
+          <li><a href="#specialist-section">恆濕機 / 轉輪機</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>服務 &amp; 資訊</h4>
         <ul>
           <li><a href="#contact">免費送貨</a></li>
-          <li><a href="#contact">全屋抽濕方案訂製</a></li>
+          <li><a href="#contact">全屋方案訂製</a></li>
           <li><a href="#contact">商業採購優惠</a></li>
-          <li><a href="#features">按面積選型</a></li>
-          <li><a href="#contact">售後保修</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>關於我們</h4>
-        <ul>
-          <li><a href="#features">關於 DryEaz</a></li>
-          <li><a href="#contact">聯絡我們</a></li>
+          <li><a href=".">按面積選型</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2024 DryEaz. All rights reserved. | 香港抽濕機推介推薦專門店</p>
-    </div>
+    <div class="footer-bottom">© 2024 DryEaz. All rights reserved. 香港抽濕機推介推薦專門店</div>
   </footer>
 
   <script src="script.js"></script>
