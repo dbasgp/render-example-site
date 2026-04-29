@@ -129,15 +129,13 @@ nav {
 .hero h1 .line { display: block; }
 .hero-sub { font-size: clamp(1rem, 1.5vw, 1.3rem); color: var(--text-muted); max-width: 600px; margin: 24px auto 36px; line-height: 1.5; }
 .hero-actions { display: inline-flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center; }
-.hero-product { width: min(680px, 90%); margin: 0 auto; position: relative; z-index: 1; }
+.hero-product { width: min(720px, 92%); margin: 0 auto; position: relative; z-index: 1; }
 .hero-product img {
   width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.12);
   aspect-ratio: 16/10;
   object-fit: contain;
-  background: var(--bg-alt);
-  padding: 40px;
+  background: transparent;
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,0.12)) drop-shadow(0 8px 20px rgba(0,0,0,0.06));
 }
 
 .scroll-cue { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 2; }
@@ -227,16 +225,28 @@ nav {
   margin-bottom: 60px;
 }
 .feature-card {
-  background: var(--bg-alt);
+  background: #fff;
+  border: 1px solid var(--line);
   border-radius: 22px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
 }
-.feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-.fc-img { aspect-ratio: 4/3; overflow: hidden; background: #fff; }
-.fc-img img { width: 100%; height: 100%; object-fit: contain; padding: 24px; transition: transform 0.5s var(--ease); }
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.12);
+}
+.fc-img {
+  aspect-ratio: 4/3;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.fc-img img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s var(--ease); }
 .feature-card:hover .fc-img img { transform: scale(1.05); }
 .fc-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
 .fc-meta { font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
@@ -395,28 +405,29 @@ nav {
 .spec-card {
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .spec-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  border-color: var(--accent);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.12);
 }
 .sc-img {
-  background: var(--bg-alt);
-  border-radius: 10px;
+  background: #fff;
   aspect-ratio: 4/3;
-  overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sc-img img {
-  width: 100%; height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  padding: 14px;
   transition: transform 0.4s var(--ease);
 }
 .spec-card:hover .sc-img img { transform: scale(1.05); }
