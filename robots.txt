@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://render-example-site-8lhs.onrender.com/sitemap.xml
