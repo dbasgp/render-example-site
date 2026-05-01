@@ -137,30 +137,6 @@ nav {
   filter: drop-shadow(0 30px 50px rgba(0,0,0,0.18)) drop-shadow(0 8px 24px rgba(0,0,0,0.08));
 }
 
-.scroll-cue { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 2; }
-.scroll-cue span {
-  display: block; width: 22px; height: 36px;
-  border: 2px solid var(--text-muted);
-  border-radius: 100px;
-  position: relative;
-}
-.scroll-cue span::after {
-  content: '';
-  position: absolute;
-  top: 8px; left: 50%;
-  width: 3px; height: 6px;
-  background: var(--text-muted);
-  border-radius: 2px;
-  transform: translateX(-50%);
-  animation: scrollCue 1.6s ease-in-out infinite;
-}
-@keyframes scrollCue {
-  0% { transform: translate(-50%, 0); opacity: 0; }
-  40% { opacity: 1; }
-  80% { transform: translate(-50%, 12px); opacity: 0; }
-  100% { transform: translate(-50%, 0); opacity: 0; }
-}
-
 /* ========== BUTTONS ========== */
 .btn-pill {
   display: inline-flex;
