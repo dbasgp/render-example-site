@@ -292,7 +292,7 @@ nav {
 .app-suggest { font-size: 12px !important; color: var(--accent) !important; font-weight: 500; margin-bottom: 0 !important; letter-spacing: 0.02em; }
 
 /* ========== CATALOG SECTION (series-grouped products) ========== */
-.catalog-section { padding: 140px 0; background: var(--bg-alt); }
+.catalog-section { padding: 140px 0; background: #fff; }
 
 .series-block {
   background: #fff;
