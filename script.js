@@ -60,13 +60,35 @@ if (heroProduct) {
 // ========== Quote form submission ==========
 const quoteForm = document.getElementById('quoteForm');
 if (quoteForm) {
-  quoteForm.addEventListener('submit', (e) => {
+  quoteForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = quoteForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Sent — we will be in touch';
-    btn.style.background = '#1d1d1f';
-    btn.disabled = true;
     const fineprint = quoteForm.querySelector('.form-fineprint');
-    if (fineprint) fineprint.textContent = 'Thanks — your enquiry has been received.';
+    const originalBtnText = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(quoteForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(quoteForm),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        btn.textContent = 'Sent — we will be in touch';
+        btn.style.background = '#1d1d1f';
+        if (fineprint) fineprint.textContent = 'Thanks — your enquiry has been received.';
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      btn.textContent = originalBtnText;
+      btn.disabled = false;
+      if (fineprint) {
+        fineprint.textContent = 'Sorry — could not send. Email dba@dba.sg or WhatsApp +65 8985 9886.';
+        fineprint.style.color = '#c0392b';
+      }
+    }
   });
 }

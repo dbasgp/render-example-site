@@ -936,7 +936,11 @@
             <a href="https://dba.sg" target="_blank" rel="noopener" class="meta-link">↗ Browse the full catalog at dba.sg</a>
           </div>
         </div>
-        <form class="quote-form reveal" id="quoteForm">
+        <form class="quote-form reveal" id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="9ea89c72-aefd-4762-8d2d-48e3f68530d3" />
+          <input type="hidden" name="subject" value="New quote request from dryeaz.hk" />
+          <input type="hidden" name="from_name" value="DryEaz quote form" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-row">
             <label>Name<input type="text" name="name" required /></label>
             <label>Phone<input type="tel" name="phone" required /></label>
