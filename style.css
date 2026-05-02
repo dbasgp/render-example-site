@@ -214,14 +214,15 @@ nav {
   border-color: rgba(0,0,0,0.12);
 }
 .fc-img {
-  aspect-ratio: 4/3;
+  height: 260px;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
+  overflow: hidden;
 }
-.fc-img img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s var(--ease); }
+.fc-img img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: transform 0.5s var(--ease); }
 .feature-card:hover .fc-img img { transform: scale(1.05); }
 .fc-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
 .fc-meta { font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
@@ -393,15 +394,18 @@ nav {
 }
 .sc-img {
   background: #fff;
-  aspect-ratio: 4/3;
+  height: 220px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .sc-img img {
   max-width: 100%;
   max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   transition: transform 0.4s var(--ease);
 }
