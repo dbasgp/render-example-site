@@ -69,12 +69,13 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 22px;
-  background: var(--bg-alt);
+  background: #fff;
+  border: 1px solid var(--line);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 28px;
 }
 .fn-feat-img img {
   max-width: 100%;
@@ -180,11 +181,12 @@
   aspect-ratio: 4 / 3;
   border-radius: 16px;
   overflow: hidden;
-  background: var(--bg-alt);
+  background: #fff;
+  border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;
+  padding: 22px;
 }
 .fn-card-img img {
   max-width: 100%;
@@ -246,12 +248,14 @@
 .article-cover img {
   display: block;
   max-width: 100%;
-  max-height: 560px;
+  max-height: 520px;
   width: auto;
   height: auto;
   margin: 0 auto;
   border-radius: 18px;
-  background: var(--bg-alt);
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 24px;
 }
 
 .prose {
