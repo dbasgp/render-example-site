@@ -1,0 +1,353 @@
+/* ============================================================
+   DryEaz — "Precision Dark" homepage theme
+   Bold cinematic hardware-brand layer over style.css.
+   Scoped to body.home so product/blog pages are untouched.
+   Style: Liquid Glass on dark canvas · cyan→teal air gradient
+   Type:  Space Grotesk display + Inter body
+   ============================================================ */
+
+body.home {
+  --bg: #06090e;
+  --bg-2: #0b1016;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-2: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --text: #eef3f8;
+  --text-muted: #9aa9b8;
+  --line: rgba(255, 255, 255, 0.09);
+  --cyan: #34e0ee;
+  --teal: #18c8d8;
+  --teal-deep: #0a93a6;
+  --amber: #fb923c;
+  --grad: linear-gradient(115deg, #38e0ee 0%, #2bd4c4 45%, #4cb6ff 100%);
+  --display: 'Space Grotesk', 'Outfit', var(--font);
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Ambient backdrop glow — fixed, subtle, cinematic */
+body.home::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 78% -5%, rgba(52, 224, 238, 0.16), transparent 60%),
+    radial-gradient(50% 45% at 8% 8%, rgba(76, 182, 255, 0.12), transparent 60%),
+    radial-gradient(70% 60% at 50% 110%, rgba(24, 200, 216, 0.10), transparent 60%);
+}
+body.home section,
+body.home footer { position: relative; z-index: 1; }
+
+body.home h1, body.home h2, body.home h3 { font-family: var(--display); letter-spacing: -0.03em; }
+body.home .eyebrow { color: var(--cyan); }
+body.home .lead { color: var(--text-muted); }
+
+/* ===================== NAV ===================== */
+body.home #nav {
+  background: rgba(8, 12, 18, 0.55) !important;
+  border-bottom: 1px solid var(--border) !important;
+  backdrop-filter: saturate(160%) blur(22px);
+  -webkit-backdrop-filter: saturate(160%) blur(22px);
+}
+body.home .nav-links a { color: var(--text); }
+body.home .nav-links a:hover { background: rgba(255, 255, 255, 0.08); }
+body.home .nav-links .external { color: var(--text-muted); }
+body.home .nav-cta {
+  background: var(--grad) !important;
+  color: #04181b !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 22px rgba(43, 212, 196, 0.30);
+}
+body.home .nav-cta:hover { filter: brightness(1.08); }
+body.home .logo img { filter: brightness(0) invert(1); opacity: 0.95; }
+body.home .nav-mobile-btn span { background: var(--text); }
+body.home .mobile-nav { background: var(--bg-2); border-top-color: var(--border); }
+body.home .mobile-nav a { color: var(--text); border-bottom-color: var(--border); }
+
+/* ===================== HERO ===================== */
+body.home .hero {
+  background: transparent;
+  min-height: 100vh;
+}
+body.home .hero-bg {
+  background:
+    radial-gradient(40% 35% at 20% 28%, rgba(52, 224, 238, 0.10), transparent 60%),
+    radial-gradient(45% 40% at 82% 64%, rgba(76, 182, 255, 0.10), transparent 60%);
+}
+body.home .hero .eyebrow {
+  display: inline-block;
+  padding: 7px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 100px;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  color: var(--cyan);
+  margin-bottom: 28px;
+}
+body.home .hero h1 { font-size: clamp(3rem, 8vw, 6.4rem); line-height: 0.98; }
+body.home .hero h1 .line.subtle {
+  color: transparent;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 700;
+}
+body.home .hero-sub { color: var(--text-muted); }
+
+/* glass product frame */
+body.home .hero-product {
+  border-radius: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  padding: 28px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+body.home .hero-product img {
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
+}
+
+/* ===================== BUTTONS ===================== */
+body.home .btn-pill {
+  background: var(--grad);
+  color: #04181b;
+  font-weight: 700;
+  box-shadow: 0 8px 26px rgba(43, 212, 196, 0.28);
+}
+body.home .btn-pill:hover { filter: brightness(1.08); transform: translateY(-2px); }
+body.home .btn-pill.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  box-shadow: none;
+}
+body.home .btn-pill.outline:hover { background: var(--surface-2); color: #fff; filter: none; }
+body.home .btn-pill.primary { background: var(--grad); color: #04181b; }
+body.home .btn-text { color: var(--cyan); }
+body.home .btn-text:hover { color: #fff; }
+body.home .btn-quote { color: var(--cyan); }
+body.home .btn-quote:hover { color: #fff; }
+
+/* ===================== SECTION SURFACES ===================== */
+body.home .brand-bridge,
+body.home .featured,
+body.home .apps,
+body.home .catalog-section,
+body.home .catalog-downloads,
+body.home .faq { background: transparent; }
+body.home .brand-bridge { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+body.home .tech { background: linear-gradient(180deg, #080c12, #05080c); }
+body.home .sizing { background: var(--bg-2); }
+body.home .section-head h2 { color: var(--text); }
+body.home .section-head.dark h2, body.home .section-head.dark .eyebrow { color: var(--text); }
+
+/* ===================== GLASS CARDS (featured / apps / catalog) ===================== */
+body.home .feature-card,
+body.home .app-card,
+body.home .series-block,
+body.home .spec-card,
+body.home .cd-card,
+body.home .size-table {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+body.home .feature-card:hover,
+body.home .app-card:hover,
+body.home .spec-card:hover,
+body.home .cd-card:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* product images keep a clean light plate so the studio shots read well */
+body.home .fc-img,
+body.home .sc-img {
+  background: #f4f6f8;
+  border-radius: 14px;
+}
+body.home .fc-body h3, body.home .app-card h3, body.home .spec-card h4 { color: var(--text); }
+body.home .fc-body > p, body.home .app-card p { color: var(--text-muted); }
+body.home .price { color: #fff; }
+body.home .fc-meta { color: var(--amber); }
+body.home .fc-foot { border-top-color: var(--border); }
+body.home .featured-foot { color: var(--text-muted); }
+body.home .featured-foot a, body.home .app-suggest { color: var(--cyan) !important; }
+
+/* ===================== TECHNOLOGY (interactive tabs) ===================== */
+body.home .tech-imgs { background: var(--surface); border-color: var(--border); }
+body.home .tech-step {
+  cursor: pointer;
+  padding: 22px 24px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), opacity 0.3s;
+  opacity: 0.5;
+}
+body.home .tech-step:hover { opacity: 0.85; background: var(--surface); }
+body.home .tech-step.active {
+  opacity: 1;
+  background: var(--surface);
+  border-color: var(--border-strong);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+body.home .tech-step.active .step-num { color: var(--cyan); }
+body.home .step-points li::before { background: var(--cyan); }
+
+/* ===================== SERIES BLOCK + DISCLOSURES ===================== */
+body.home .series-block { box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4); }
+body.home .series-head { border-bottom-color: var(--border); }
+body.home .series-desc { color: var(--text-muted); }
+body.home .catalog-link {
+  color: var(--cyan);
+  border-color: var(--border-strong);
+  background: var(--surface);
+}
+body.home .catalog-link:hover { background: var(--surface-2); border-color: var(--cyan); }
+
+/* Collapsible "Configuration & control" panel (JS injects .feature-toggle) */
+body.home .shared-features {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: max-height 0.45s var(--ease), opacity 0.35s, padding 0.45s var(--ease), margin 0.45s var(--ease);
+}
+body.home .shared-features.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-color: transparent;
+}
+body.home .sf-col h4 { color: var(--text-muted); }
+body.home .sf-col ul li { color: var(--text); }
+body.home .sf-col ul li::before { background: var(--cyan); }
+
+.feature-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding: 11px 20px;
+  font: 600 13px/1 var(--font);
+  letter-spacing: 0.02em;
+  color: var(--cyan);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.feature-toggle:hover { background: var(--surface-2); border-color: var(--cyan); }
+.feature-toggle .chev { transition: transform 0.3s var(--ease); }
+.feature-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+
+/* ===================== SPEC CARDS — progressive disclosure ===================== */
+body.home .spec-card { overflow: hidden; }
+
+/* big headline metric injected by JS, always visible */
+.spec-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 2px 0 16px;
+}
+.spec-headline .num {
+  font: 700 2rem/1 var(--display);
+  letter-spacing: -0.03em;
+  color: transparent;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.spec-headline .unit { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+
+body.home .spec-table {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.45s var(--ease), opacity 0.3s, margin 0.45s var(--ease);
+  margin: 0;
+}
+body.home .spec-card.open .spec-table { max-height: 360px; opacity: 1; margin-bottom: 4px; }
+body.home .spec-table td:first-child { color: var(--text-muted); }
+body.home .spec-table td:last-child { color: var(--text); }
+body.home .spec-table tr { border-bottom-color: var(--border); }
+
+.spec-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 9px 0;
+  font: 600 13px/1 var(--font);
+  color: var(--cyan);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: gap 0.2s, color 0.2s;
+}
+.spec-toggle:hover { gap: 11px; color: #fff; }
+.spec-toggle .chev { transition: transform 0.3s var(--ease); }
+.spec-card.open .spec-toggle .chev { transform: rotate(180deg); }
+
+/* ===================== CATALOG DOWNLOADS ===================== */
+body.home .cd-card h4 { color: var(--text); }
+body.home .cd-card p { color: var(--text-muted); }
+body.home .cd-icon { background: var(--grad); color: #04181b; }
+body.home .cd-link { color: var(--cyan); }
+
+/* ===================== SIZING TABLE ===================== */
+body.home .size-row { border-bottom-color: var(--border); }
+body.home .size-row span { border-right-color: var(--border); color: var(--text); }
+body.home .size-row.hd span { background: var(--surface); color: var(--text-muted); }
+body.home .size-row:not(.hd):hover { background: var(--surface); }
+
+/* ===================== FAQ ===================== */
+body.home .faq-item { border-bottom-color: var(--border); }
+body.home .faq-item[open] { background: var(--surface); border-radius: 14px; }
+body.home .faq-item summary { color: var(--text); }
+body.home .faq-item summary::after { color: var(--cyan); }
+body.home .faq-answer p { color: var(--text-muted); }
+body.home .faq-answer a { color: var(--cyan); }
+
+/* ===================== QUOTE ===================== */
+body.home .quote { background: var(--bg-2); border-top: 1px solid var(--border); }
+body.home .quote-form input,
+body.home .quote-form select,
+body.home .quote-form textarea {
+  background: var(--surface);
+  border-color: var(--border);
+}
+body.home .quote-form input:focus,
+body.home .quote-form select:focus,
+body.home .quote-form textarea:focus { border-color: var(--cyan); background: var(--surface-2); }
+
+/* ===================== FOOTER ===================== */
+body.home footer { background: #04060a; border-top: 1px solid var(--border); }
+
+/* ===================== MOTION ===================== */
+@keyframes home-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+body.home .hero-product { animation: home-float 7s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  body.home .hero-product { animation: none; }
+  body.home .shared-features,
+  body.home .spec-table { transition: none; }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  body.home .hero h1 { font-size: clamp(2.6rem, 12vw, 3.6rem); }
+  body.home .hero-product { padding: 16px; }
+}
