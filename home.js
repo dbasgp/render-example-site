@@ -1,7 +1,6 @@
 /* ============================================================
-   DryEaz homepage — progressive disclosure enhancements
-   Runs only on the homepage (body.home). Pure progressive
-   enhancement: if JS is off, all content stays visible.
+   DryEaz homepage — progressive disclosure + motion
+   Runs only on body.home. Pure progressive enhancement.
    ============================================================ */
 (function () {
   if (!document.body.classList.contains('home')) return;
@@ -11,38 +10,65 @@
     'stroke="currentColor" stroke-width="2.4" stroke-linecap="round" ' +
     'stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
 
-  /* ---------- 1. Spec cards: headline metric + collapsible table ---------- */
+  /* ---------- 1. Spec cards: headline + quick stats + collapsible rest ---------- */
   document.querySelectorAll('.spec-card').forEach(function (card, i) {
     var table = card.querySelector('.spec-table');
     if (!table) return;
+    var rows = Array.prototype.slice.call(table.querySelectorAll('tr'));
+    var h4 = card.querySelector('h4');
+    if (!rows.length || !h4) return;
 
-    // Pull the first spec row to surface as an always-visible headline.
-    var firstRow = table.querySelector('tr');
-    if (firstRow) {
-      var cells = firstRow.querySelectorAll('td');
-      if (cells.length >= 2) {
-        var val = cells[1].textContent.trim();
-        var m = val.match(/^([\d.,±]+)\s*(.*)$/);
-        var headline = document.createElement('div');
-        headline.className = 'spec-headline';
-        headline.innerHTML = m
-          ? '<span class="num">' + m[1] + '</span><span class="unit">' + (m[2] || cells[0].textContent.trim()) + '</span>'
-          : '<span class="num">' + val + '</span>';
-        var h4 = card.querySelector('h4');
-        if (h4) h4.insertAdjacentElement('afterend', headline);
-      }
+    function cellPair(row) {
+      var c = row.querySelectorAll('td');
+      return c.length >= 2 ? { k: c[0].textContent.trim(), v: c[1].textContent.trim() } : null;
     }
 
-    // Collapse the full table behind a toggle.
+    // headline = first row, as a big animated metric
+    var head = cellPair(rows[0]);
+    if (head) {
+      var m = head.v.match(/^([\d.,±]+)\s*(.*)$/);
+      var hEl = document.createElement('div');
+      hEl.className = 'spec-headline';
+      hEl.innerHTML = m
+        ? '<span class="num" data-count="' + m[1] + '">' + m[1] + '</span><span class="unit">' + (m[2] || head.k) + '</span>'
+        : '<span class="num">' + head.v + '</span>';
+      h4.insertAdjacentElement('afterend', hEl);
+
+      // quick stats = next up-to-3 rows, always visible
+      var quick = rows.slice(1, 4).map(cellPair).filter(Boolean);
+      if (quick.length) {
+        var qs = document.createElement('div');
+        qs.className = 'spec-quickstats';
+        qs.innerHTML = quick.map(function (p) {
+          return '<div class="qs"><span class="qs-k">' + p.k + '</span><span class="qs-v">' + p.v + '</span></div>';
+        }).join('');
+        hEl.insertAdjacentElement('afterend', qs);
+      }
+
+      // remove surfaced rows from the table; the rest collapses
+      rows.slice(0, 4).forEach(function (r) { r.remove(); });
+    }
+
+    var remaining = table.querySelectorAll('tr').length;
+    if (remaining === 0) { table.remove(); return; }
+
+    // wrap remaining table so grid-template-rows can animate true auto height
+    var wrap = document.createElement('div');
+    wrap.className = 'spec-wrap';
+    wrap.id = 'spec-' + i;
+    var inner = document.createElement('div');
+    inner.className = 'spec-wrap-inner';
+    table.parentNode.insertBefore(wrap, table);
+    inner.appendChild(table);
+    wrap.appendChild(inner);
+
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'spec-toggle';
     btn.setAttribute('aria-expanded', 'false');
-    var tableId = 'spec-' + i;
-    table.id = tableId;
-    btn.setAttribute('aria-controls', tableId);
+    btn.setAttribute('aria-controls', wrap.id);
     btn.innerHTML = 'Full specs' + chev;
-    table.insertAdjacentElement('beforebegin', btn);
+    wrap.parentNode.insertBefore(btn, wrap);
 
     btn.addEventListener('click', function () {
       var open = card.classList.toggle('open');
@@ -54,17 +80,14 @@
   /* ---------- 2. Series config/control lists: fold into a disclosure ---------- */
   document.querySelectorAll('.shared-features').forEach(function (panel, i) {
     panel.classList.add('collapsed');
-    var panelId = 'feat-' + i;
-    panel.id = panelId;
-
+    panel.id = 'feat-' + i;
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'feature-toggle';
     btn.setAttribute('aria-expanded', 'false');
-    btn.setAttribute('aria-controls', panelId);
+    btn.setAttribute('aria-controls', panel.id);
     btn.innerHTML = 'Configuration &amp; controls' + chev;
     panel.insertAdjacentElement('beforebegin', btn);
-
     btn.addEventListener('click', function () {
       var open = panel.classList.toggle('collapsed') === false;
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -88,10 +111,38 @@
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(step.getAttribute('data-step')); }
       });
     });
-    // Sync active step while scrolling through the section.
-    var obs = new IntersectionObserver(function (entries) {
+    var tObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) activate(e.target.getAttribute('data-step')); });
     }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-    steps.forEach(function (s) { obs.observe(s); });
+    steps.forEach(function (s) { tObs.observe(s); });
+  }
+
+  /* ---------- 4. Count-up animation on metrics when scrolled into view ---------- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var nums = document.querySelectorAll('.spec-headline .num[data-count]');
+    var cObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        cObs.unobserve(el);
+        var raw = el.getAttribute('data-count');
+        var target = parseFloat(raw.replace(/,/g, '').replace('±', ''));
+        if (isNaN(target)) return;
+        var dec = (raw.split('.')[1] || '').length;
+        var dur = 1100, start = null;
+        function frame(t) {
+          if (start === null) start = t;
+          var p = Math.min((t - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(dec);
+          if (p < 1) requestAnimationFrame(frame);
+          else el.textContent = raw;
+        }
+        el.textContent = dec ? '0.0' : '0';
+        requestAnimationFrame(frame);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function (n) { cObs.observe(n); });
   }
 })();

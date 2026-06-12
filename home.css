@@ -91,24 +91,25 @@ body.home .hero .eyebrow {
 body.home .hero h1 { font-size: clamp(3rem, 8vw, 6.4rem); line-height: 0.98; }
 body.home .hero h1 .line.subtle {
   color: transparent;
-  background: var(--grad);
+  background: linear-gradient(115deg, #38e0ee 0%, #2bd4c4 30%, #4cb6ff 55%, #38e0ee 80%, #2bd4c4 100%);
+  background-size: 220% auto;
   -webkit-background-clip: text;
   background-clip: text;
   font-weight: 700;
+  animation: home-shimmer 5s linear infinite;
 }
 body.home .hero-sub { color: var(--text-muted); }
 
-/* glass product frame */
+/* frameless floating product */
 body.home .hero-product {
-  border-radius: 28px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(14px);
-  padding: 28px;
-  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: none;
+  border: none;
+  backdrop-filter: none;
+  padding: 0;
+  box-shadow: none;
 }
 body.home .hero-product img {
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 60px rgba(52, 224, 238, 0.12));
 }
 
 /* ===================== BUTTONS ===================== */
@@ -250,33 +251,57 @@ body.home .sf-col ul li::before { background: var(--cyan); }
 .feature-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
 
 /* ===================== SPEC CARDS — progressive disclosure ===================== */
+/* cards size to their own content so collapsed ones stay compact */
+body.home .series-grid { align-items: start; }
 body.home .spec-card { overflow: hidden; }
+body.home .spec-card .btn-quote { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border); }
 
 /* big headline metric injected by JS, always visible */
 .spec-headline {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  margin: 2px 0 16px;
+  margin: 2px 0 18px;
 }
 .spec-headline .num {
-  font: 700 2rem/1 var(--display);
+  font: 700 2.3rem/1 var(--display);
   letter-spacing: -0.03em;
   color: transparent;
   background: var(--grad);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
+  animation: home-shimmer 6s linear infinite;
 }
 .spec-headline .unit { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
 
-body.home .spec-table {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.45s var(--ease), opacity 0.3s, margin 0.45s var(--ease);
-  margin: 0;
+/* always-visible quick stats injected by JS */
+.spec-quickstats {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 4px;
 }
-body.home .spec-card.open .spec-table { max-height: 360px; opacity: 1; margin-bottom: 4px; }
+.spec-quickstats .qs {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+}
+.spec-quickstats .qs-k { color: var(--text-muted); }
+.spec-quickstats .qs-v { color: var(--text); font-weight: 500; text-align: right; }
+
+/* collapsible remaining specs — grid-rows 0fr→1fr animates true auto height */
+.spec-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.45s var(--ease), opacity 0.3s;
+}
+.spec-card.open .spec-wrap { grid-template-rows: 1fr; opacity: 1; }
+.spec-wrap-inner { overflow: hidden; min-height: 0; }
+body.home .spec-card.open .spec-wrap .spec-table { margin-top: 14px; }
 body.home .spec-table td:first-child { color: var(--text-muted); }
 body.home .spec-table td:last-child { color: var(--text); }
 body.home .spec-table tr { border-bottom-color: var(--border); }
@@ -286,7 +311,7 @@ body.home .spec-table tr { border-bottom-color: var(--border); }
   align-items: center;
   gap: 7px;
   margin-top: 14px;
-  padding: 9px 0;
+  padding: 0;
   font: 600 13px/1 var(--font);
   color: var(--cyan);
   background: none;
@@ -333,17 +358,97 @@ body.home .quote-form textarea:focus { border-color: var(--cyan); background: va
 /* ===================== FOOTER ===================== */
 body.home footer { background: #04060a; border-top: 1px solid var(--border); }
 
-/* ===================== MOTION ===================== */
+/* ===================== MOTION & TRENDING FX ===================== */
+@property --ang { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+
 @keyframes home-float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
 }
+@keyframes home-shimmer {
+  to { background-position: 200% center; }
+}
+@keyframes home-spin-border {
+  to { --ang: 360deg; }
+}
+/* drifting aurora blobs */
+@keyframes aurora-a {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(8vw, 6vh) scale(1.25); }
+  66%  { transform: translate(-6vw, 10vh) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes aurora-b {
+  0%   { transform: translate(0, 0) scale(1.1); }
+  50%  { transform: translate(-10vw, -8vh) scale(0.85); }
+  100% { transform: translate(0, 0) scale(1.1); }
+}
+
 body.home .hero-product { animation: home-float 7s ease-in-out infinite; }
 
+/* living aurora layer behind everything */
+body.home::after {
+  content: '';
+  position: fixed;
+  inset: -20vh -20vw;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(28vw 28vw at 75% 12%, rgba(52, 224, 238, 0.20), transparent 60%),
+    radial-gradient(24vw 24vw at 18% 70%, rgba(76, 182, 255, 0.16), transparent 60%);
+  filter: blur(40px);
+  animation: aurora-a 26s ease-in-out infinite;
+}
+body.home .hero-bg { animation: aurora-b 22s ease-in-out infinite; }
+
+/* animated conic-gradient border on hover (trending) */
+body.home .feature-card,
+body.home .spec-card,
+body.home .app-card { position: relative; }
+body.home .feature-card::after,
+body.home .spec-card::after,
+body.home .app-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--ang), transparent 0 58%, #34e0ee 74%, #4cb6ff 84%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  pointer-events: none;
+}
+body.home .feature-card:hover::after,
+body.home .spec-card:hover::after,
+body.home .app-card:hover::after {
+  opacity: 1;
+  animation: home-spin-border 3.2s linear infinite;
+}
+
+/* animated gradient fill on primary buttons */
+body.home .btn-pill:not(.outline),
+body.home .nav-cta {
+  background-size: 200% auto;
+  animation: home-shimmer 5s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  body.home .hero-product { animation: none; }
+  body.home .hero-product,
+  body.home::after,
+  body.home .hero-bg,
+  body.home .spec-headline .num,
+  body.home .hero h1 .line.subtle,
+  body.home .btn-pill,
+  body.home .nav-cta { animation: none; }
+  body.home .feature-card:hover::after,
+  body.home .spec-card:hover::after,
+  body.home .app-card:hover::after { animation: none; opacity: 1; }
   body.home .shared-features,
-  body.home .spec-table { transition: none; }
+  body.home .spec-wrap { transition: none; }
 }
 
 /* ===================== RESPONSIVE ===================== */
