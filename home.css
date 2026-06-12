@@ -275,53 +275,11 @@ body.home .spec-card .btn-quote { margin-top: 18px; padding-top: 18px; border-to
 }
 .spec-headline .unit { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
 
-/* always-visible quick stats injected by JS */
-.spec-quickstats {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  margin-bottom: 4px;
-}
-.spec-quickstats .qs {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  font-size: 13px;
-}
-.spec-quickstats .qs-k { color: var(--text-muted); }
-.spec-quickstats .qs-v { color: var(--text); font-weight: 500; text-align: right; }
-
-/* collapsible remaining specs — grid-rows 0fr→1fr animates true auto height */
-.spec-wrap {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows 0.45s var(--ease), opacity 0.3s;
-}
-.spec-card.open .spec-wrap { grid-template-rows: 1fr; opacity: 1; }
-.spec-wrap-inner { overflow: hidden; min-height: 0; }
-body.home .spec-card.open .spec-wrap .spec-table { margin-top: 14px; }
+/* full specs always visible under the headline metric */
+body.home .spec-card .spec-table { margin-top: 16px; }
 body.home .spec-table td:first-child { color: var(--text-muted); }
 body.home .spec-table td:last-child { color: var(--text); }
 body.home .spec-table tr { border-bottom-color: var(--border); }
-
-.spec-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 14px;
-  padding: 0;
-  font: 600 13px/1 var(--font);
-  color: var(--cyan);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: gap 0.2s, color 0.2s;
-}
-.spec-toggle:hover { gap: 11px; color: #fff; }
-.spec-toggle .chev { transition: transform 0.3s var(--ease); }
-.spec-card.open .spec-toggle .chev { transform: rotate(180deg); }
 
 /* ===================== CATALOG DOWNLOADS ===================== */
 body.home .cd-card h4 { color: var(--text); }
