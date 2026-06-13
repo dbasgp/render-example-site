@@ -72,6 +72,8 @@ body.home .mobile-nav a { color: var(--text); border-bottom-color: var(--border)
 body.home .hero {
   background: transparent;
   min-height: 100vh;
+  justify-content: flex-start;
+  padding-top: 132px;
 }
 body.home .hero-bg {
   background:
@@ -88,7 +90,7 @@ body.home .hero .eyebrow {
   color: var(--cyan);
   margin-bottom: 28px;
 }
-body.home .hero h1 { font-size: clamp(3rem, 8vw, 6.4rem); line-height: 0.98; }
+body.home .hero h1 { font-size: clamp(2.4rem, 5.5vw, 4.6rem); line-height: 1.02; }
 body.home .hero h1 .line.subtle {
   color: transparent;
   background: linear-gradient(115deg, #38e0ee 0%, #2bd4c4 30%, #4cb6ff 55%, #38e0ee 80%, #2bd4c4 100%);
@@ -350,7 +352,7 @@ body.home footer { background: #04060a; border-top: 1px solid var(--border); }
 
 body.home .hero-product { animation: home-float 7s ease-in-out infinite; }
 
-/* living aurora layer behind everything */
+/* static ambient glow behind everything — calm, no drift */
 body.home::after {
   content: '';
   position: fixed;
@@ -358,12 +360,10 @@ body.home::after {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(38vw 38vw at 75% 12%, rgba(52, 224, 238, 0.18), transparent 100%),
-    radial-gradient(34vw 34vw at 18% 70%, rgba(76, 182, 255, 0.14), transparent 100%);
-  filter: blur(60px);
-  animation: aurora-a 26s ease-in-out infinite;
+    radial-gradient(40vw 40vw at 76% 10%, rgba(52, 224, 238, 0.14), transparent 100%),
+    radial-gradient(36vw 36vw at 16% 72%, rgba(76, 182, 255, 0.10), transparent 100%);
+  filter: blur(70px);
 }
-body.home .hero-bg { animation: aurora-b 22s ease-in-out infinite; }
 
 /* animated conic-gradient border on hover (trending) */
 body.home .feature-card,
