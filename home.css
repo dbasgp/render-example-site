@@ -99,6 +99,7 @@ body.home .hero h1 .line.subtle {
   animation: home-shimmer 5s linear infinite;
 }
 body.home .hero-sub { color: var(--text-muted); }
+body.home .hero-content { margin-bottom: 28px; }
 
 /* frameless floating product */
 body.home .hero-product {
@@ -109,6 +110,11 @@ body.home .hero-product {
   box-shadow: none;
 }
 body.home .hero-product img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 50vh;
+  margin: 0 auto;
   filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 60px rgba(52, 224, 238, 0.12));
 }
 
@@ -352,9 +358,9 @@ body.home::after {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(28vw 28vw at 75% 12%, rgba(52, 224, 238, 0.20), transparent 60%),
-    radial-gradient(24vw 24vw at 18% 70%, rgba(76, 182, 255, 0.16), transparent 60%);
-  filter: blur(40px);
+    radial-gradient(38vw 38vw at 75% 12%, rgba(52, 224, 238, 0.18), transparent 100%),
+    radial-gradient(34vw 34vw at 18% 70%, rgba(76, 182, 255, 0.14), transparent 100%);
+  filter: blur(60px);
   animation: aurora-a 26s ease-in-out infinite;
 }
 body.home .hero-bg { animation: aurora-b 22s ease-in-out infinite; }
