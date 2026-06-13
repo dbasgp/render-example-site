@@ -35,9 +35,9 @@ body.home::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(60% 50% at 78% -5%, rgba(52, 224, 238, 0.16), transparent 60%),
-    radial-gradient(50% 45% at 8% 8%, rgba(76, 182, 255, 0.12), transparent 60%),
-    radial-gradient(70% 60% at 50% 110%, rgba(24, 200, 216, 0.10), transparent 60%);
+    radial-gradient(75% 65% at 78% -5%, rgba(52, 224, 238, 0.16), transparent 100%),
+    radial-gradient(65% 60% at 8% 8%, rgba(76, 182, 255, 0.12), transparent 100%),
+    radial-gradient(85% 75% at 50% 110%, rgba(24, 200, 216, 0.10), transparent 100%);
 }
 body.home section,
 body.home footer { position: relative; z-index: 1; }
@@ -75,8 +75,8 @@ body.home .hero {
 }
 body.home .hero-bg {
   background:
-    radial-gradient(40% 35% at 20% 28%, rgba(52, 224, 238, 0.10), transparent 60%),
-    radial-gradient(45% 40% at 82% 64%, rgba(76, 182, 255, 0.10), transparent 60%);
+    radial-gradient(55% 50% at 20% 28%, rgba(52, 224, 238, 0.10), transparent 100%),
+    radial-gradient(60% 55% at 82% 64%, rgba(76, 182, 255, 0.10), transparent 100%);
 }
 body.home .hero .eyebrow {
   display: inline-block;
