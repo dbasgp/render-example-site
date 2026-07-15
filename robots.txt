@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dryeaz.sg/sitemap.xml
+Sitemap: https://www.dryeaz.sg/sitemap.xml

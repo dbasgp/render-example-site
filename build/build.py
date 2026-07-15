@@ -6,7 +6,7 @@ from pathlib import Path
 from datetime import date
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE_URL = "https://dryeaz.sg"  # custom domain is live
+SITE_URL = "https://www.dryeaz.sg"  # custom domain is live
 
 # ============================================================
 # SHARED SERIES DATA
@@ -1306,18 +1306,19 @@ def render_product_page(product):
 # ============================================================
 def render_sitemap():
     today = date.today().isoformat()
+    # Fragment (#section) URLs are ignored by search engines — only real pages here.
     urls = [
         (SITE_URL + "/", "1.0", today),
-        (SITE_URL + "/#products", "0.9", today),
-        (SITE_URL + "/#technology", "0.8", today),
-        (SITE_URL + "/#applications", "0.8", today),
-        (SITE_URL + "/#catalogs", "0.8", today),
-        (SITE_URL + "/#faq", "0.7", today),
-        (SITE_URL + "/#quote", "0.7", today),
     ]
+    blog_dir = ROOT / "blog"
+    if blog_dir.is_dir():
+        urls.append((SITE_URL + "/blog/", "0.8", today))
+        for f in sorted(blog_dir.glob("*.html")):
+            if f.name != "index.html":
+                urls.append((f"{SITE_URL}/blog/{f.name}", "0.8", today))
     for p in PRODUCTS:
         urls.append((f"{SITE_URL}/{slug_to_path(p['slug'])}", "0.9", today))
-    body = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/0.9/sitemap.xsd">\n'
+    body = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for u, p, d in urls:
         body += f"  <url><loc>{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n"
     body += "</urlset>\n"
